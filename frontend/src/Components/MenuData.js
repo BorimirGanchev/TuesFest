@@ -10,21 +10,21 @@ export const MenuData = [
         title: "Serach",
         url: "#",
         cName: "nav-links",
-        icon: "fa-solid fa-circle-info"
+        icon: "fa-sharp fa-solid fa-magnifying-glass"
     },
 
     {
         title: "Chat",
         url: "#",
         cName: "nav-links",
-        icon: "fa-solid fa-briefcase"
+        icon: "fa-solid fa-comments"
     },
 
     {
         title: "Info",
         url: "#",
         cName: "nav-links",
-        icon: "fa-solid fa-address-book"
+        icon: "fa-solid fa-circle-info"
     },
 
     {

@@ -1,5 +1,52 @@
+@font-face {
+   font-family: 'Rich';
+   src: url(/home/borimir/Documents/GitHub/TuesFest/TuesFest/frontend/public/Font/Rich.otf);
+}
+
+
 .home{
    width: 100%; 
    height: 100vh;
-   background: #427AA1;
+   background: #222;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.mainDiv{
+   width: 80%;
+   height: 70%;
+   margin-top: 7%;
+   display: flex;
+}
+
+.Text{
+   flex: 1;
+   padding: 70px 70px;
+   align-items: center;
+   justify-content: center;
+}
+.Image{
+   flex: 1;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.bigText{
+   color: white;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-size: 350%;
+}
+.smallText{
+   margin-top: 20px;
+   padding-top: 16px;
+   font-size: xx-large;
+   color: white;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.image{
+   width: 100%;
+   -webkit-transform: scaleX(-1);
+   transform: scaleX(-1);
 }
