@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -6,7 +6,7 @@
 }
 
 .App {
-  background-color: #427AA1;
+  background-color: #427aa1;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
 }
