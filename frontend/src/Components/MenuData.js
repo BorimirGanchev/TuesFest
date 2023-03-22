@@ -28,8 +28,8 @@ export const MenuData = [
     },
 
     {
-        title: "Sign Up",
-        url: "#",
+        title: "Sign Up",   
+        url: "Register.jsx",    
         cName: "nav-links-mobile",
     },
 ]
