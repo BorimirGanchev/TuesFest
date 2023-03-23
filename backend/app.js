@@ -3,7 +3,8 @@ require("dotenv").config();
 const cors = require("cors");
 const app = express();
 const Middleware = require("./middleware");
-const routes = require("./routes");
+const routes = require("./router/router");
+const db_connection = require("./db/connect-db");
 
 //
 //
@@ -23,10 +24,15 @@ app.use(Middleware.decodeToken);
 
 const port = process.env.PORT || 3000;
 
-const start = () => {
-  app.listen(port, () => {
-    console.log("server is listening on port " + port);
-  });
+const start = async () => {
+  try {
+    await db_connection(process.env.MONGO_URI);
+    app.listen(port, () => {
+      console.log("server is listening on port " + port);
+    });
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 start();
