@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .mainDiv {
@@ -43,4 +44,13 @@
   width: 100%;
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
+}
+
+@media screen and (max-width: 850px){
+  .home{
+    height: auto;
+  }
+  .mainDiv{
+    flex-direction: column;
+  }
 }
