@@ -1,5 +1,5 @@
 .formContainer {
-  background-color: #a7bcff;
+  background-color: #222;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -37,7 +37,7 @@
         width: 250px;
         border-bottom: 1px solid #a7bcff;
         &::placeholder {
-          color: rgb(175, 175, 175);
+          color: rgb(124, 124, 124);
         }
       }
 
@@ -79,7 +79,7 @@
   justify-content: center;
 
   .container {
-    border: 1px solid white;
+    margin-top: 4%;
     border-radius: 10px;
     width: 65%;
     height: 80%;

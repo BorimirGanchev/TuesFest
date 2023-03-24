@@ -1,6 +1,8 @@
 import { Component } from "react";
 import { MenuData } from "./MenuData";
 import "./NavbarStyle.css";
+import {Link} from "react-router-dom"
+
 
 class Navbar extends Component {
   state = { clicked: false };
@@ -43,7 +45,7 @@ class Navbar extends Component {
             </li>
             <li>
                 <a className="nav-links-mobile">
-                    Sign up
+                    <Link to="/register">Sign up</Link>
                 </a>
             </li>
         </ul>

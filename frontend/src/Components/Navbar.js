@@ -1,6 +1,8 @@
 import { Component } from "react";
 import { MenuData } from "./MenuData";
 import "./NavbarStyle.css";
+import {Link} from "react-router-dom"
+
 
 class Navbar extends Component {
   state = { clicked: false };
@@ -17,16 +19,35 @@ class Navbar extends Component {
           ></i>
         </div>
         <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
-          {MenuData.map((item, index) => {
-            return (
-              <li key={index}>
-                <a href={item.url} className={item.cName}>
-                  <i className={item.icon}></i>
-                  {item.title}
+            <li>
+                <a className="nav-links">
+                    <i className="fa-solid fa-house-user"></i>
+                    <Link to="/" style={{textDecoration:"none", color:"white"}}>Home</Link>
                 </a>
-              </li>
-            );
-          })}
+            </li>
+            <li>
+                <a className="nav-links">
+                    <i className="fa-sharp fa-solid fa-magnifying-glass"></i>
+                    Serach
+                </a>
+            </li>
+            <li>
+                <a className="nav-links">
+                    <i className="fa-solid fa-comments"></i>
+                    <Link to="chat" style={{textDecoration:"none", color:"white"}}>Chat</Link>
+                </a>
+            </li>
+            <li>
+                <a className="nav-links">
+                    <i className="fa-solid fa-circle-info"></i>
+                    Info
+                </a>
+            </li>
+            <li>
+                <a className="nav-links-mobile">
+                    <Link to="/register" style={{textDecoration:"none", color:"black"}}>Sign up</Link>
+                </a>
+            </li>
         </ul>
       </nav>
     );

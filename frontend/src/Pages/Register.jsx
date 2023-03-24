@@ -1,6 +1,7 @@
 import React from "react";
 import "../Styles/Register.css"
 import Add from "../Pictures2/addAvatar.png"
+import { Link } from "react-router-dom";
 
 const Register = () => {
     return (
@@ -20,7 +21,7 @@ const Register = () => {
             <button>Sign up</button>
             </form>
             <p>
-            You do have an account? Login
+            You do have an account? <Link to="/login">Login</Link>
             </p>
         </div>
         </div>

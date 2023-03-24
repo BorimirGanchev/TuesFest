@@ -1,5 +1,5 @@
 .formContainer {
-  background-color: #a7bcff;
+  background-color: #222;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -35,10 +35,10 @@
   border-bottom: 1px solid #a7bcff;
 }
 .formContainer .formWrapper form input::-moz-placeholder {
-  color: rgb(175, 175, 175);
+  color: rgb(124, 124, 124);
 }
 .formContainer .formWrapper form input::placeholder {
-  color: rgb(175, 175, 175);
+  color: rgb(124, 124, 124);
 }
 .formContainer .formWrapper form button {
   background-color: #7b96ec;
@@ -73,7 +73,7 @@
   justify-content: center;
 }
 .home .container {
-  border: 1px solid white;
+  margin-top: 4%;
   border-radius: 10px;
   width: 65%;
   height: 80%;
