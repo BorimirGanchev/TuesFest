@@ -28,7 +28,7 @@ class Navbar extends Component {
             <li>
                 <a className="nav-links">
                     <i className="fa-sharp fa-solid fa-magnifying-glass"></i>
-                    Serach
+                    <Link to="/illsearch" style={{textDecoration:"none", color:"white"}}>Search</Link>
                 </a>
             </li>
             <li>
