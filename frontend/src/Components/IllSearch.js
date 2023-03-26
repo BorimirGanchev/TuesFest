@@ -3,7 +3,7 @@ import "../Styles/IllSearch.css";
 
 const IllSearch = () =>{
     return(
-        <div className="input">
+        <div className="input2">
             <div className="text">
                 <h2>By entering symptoms, the search engine will show you probable diseases.</h2>
             </div>

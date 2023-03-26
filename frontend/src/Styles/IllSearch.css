@@ -1,4 +1,4 @@
-.input {
+.input2 {
   height: 100vh;
   background-color: #222;
   padding: 10px;
@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
 }
-.input h2 {
+.input2 h2 {
   color: white;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 300%;
@@ -15,7 +15,7 @@
   inline-size: 850px;
   text-align: center;
 }
-.input input {
+.input2 input {
   width: 50%;
   border: 4px solid white;
   height: 55px;
@@ -26,18 +26,18 @@
   font-size: 20px;
   padding-left: 10px;
 }
-.input input::-moz-placeholder {
+.input2 input::-moz-placeholder {
   color: rgb(82, 82, 82);
 }
-.input input::placeholder {
+.input2 input::placeholder {
   color: rgb(82, 82, 82);
 }
-.input .send {
+.input2 .send {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.input .send button {
+.input2 .send button {
   border: 4px solid white;
   padding: 10px 15px;
   border-radius: 25px;
