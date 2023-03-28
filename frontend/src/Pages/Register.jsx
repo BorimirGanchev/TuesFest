@@ -42,10 +42,10 @@ const Register = () => {
               email,
               photoURL: downloadURL,
             });
-navigate("/");
+
             //create empty user chats on firestore
             await setDoc(doc(db, "userChats", res.user.uid), {});
-            
+            navigate("/");
           } catch (err) {
             console.log(err);
             setErr(true);
@@ -75,6 +75,7 @@ navigate("/");
                 <img src={Add} alt="" />
                 <span>Add an avatar</span>
             </label>
+            {err && <span>error in creating user</span>}
             <button>Sign up</button>
             </form>
             <p>
