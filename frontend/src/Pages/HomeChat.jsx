@@ -3,7 +3,7 @@ import "../Styles/Register.css";
 import Sidebar from '../Components/Sidebar'
 import Chat from '../Components/Chat'
 
-const Home = () => {
+function HomeChat(){
   return (
     <div className='home'>
       <div className="container">
@@ -14,4 +14,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default HomeChat

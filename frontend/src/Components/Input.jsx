@@ -13,7 +13,7 @@ import {
 import { db, storage } from "../firebase-config/firebase-config";
 import { v4 as uuid } from "uuid";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-
+import "./NavbarStyle.css";
 const Input = () => {
   const [text, setText] = useState("");
   const [img, setImg] = useState(null);
@@ -92,7 +92,7 @@ const Input = () => {
         <label htmlFor="file">
           <img src={Img} alt="" />
         </label>
-        <button onClick={handleSend}>Send</button>
+        <button onClick={handleSend} className = "send-message">Send</button>
       </div>
     </div>
   );

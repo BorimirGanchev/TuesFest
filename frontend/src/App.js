@@ -4,10 +4,9 @@ import Home from "./Components/Home";
 import { Route, Link, Routes, Navigate, BrowserRouter } from "react-router-dom";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
-import HomeChat from "./Pages/HomeChat";
 import IllSearch from "./Components/IllSearch";
 import { AuthContext } from "./context/auth-context-firebase-trash";
-
+import HomeChat from "./Pages/HomeChat";
 function App() {
   const { currentUser } = useContext(AuthContext);
 
@@ -33,6 +32,8 @@ function App() {
           />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
+          <Route path="IllSearch" element={<IllSearch />} />
+          <Route path="chats" element={<HomeChat />} />
         </Route>
       </Routes>
     </BrowserRouter>

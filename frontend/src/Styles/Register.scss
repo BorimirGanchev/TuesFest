@@ -296,6 +296,14 @@
             background-color: #8da4f1;
             cursor: pointer;
           }
+
+          button:hover {
+            border: none;
+            padding: 10px 15px;
+            color: white;
+            background-color: #2e51c4;
+            cursor: pointer;
+          }
         }
       }
     }
