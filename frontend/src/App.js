@@ -9,27 +9,33 @@ import IllSearch from "./Components/IllSearch";
 import { AuthContext } from "./context/auth-context-firebase-trash";
 
 function App() {
-  const { current_user } = useContext(AuthContext);
+  const { currentUser } = useContext(AuthContext);
 
   const ProtectedRoute = ({ children }) => {
-    if (!current_user) {
+    if (!currentUser) {
       return <Navigate to="/login" />;
     }
+
+    return children;
   };
+
   return (
-    <>
-      <Navbar />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/">
-            <Route path="illsearch" element={<IllSearch />} />
-            <Route path="login" element={<Login />} />
-            <Route path="register" element={<Register />} />
-            <Route path="chat" element={<HomeChat />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/">
+          <Route
+            index
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
