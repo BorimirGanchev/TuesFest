@@ -32,8 +32,22 @@ function App() {
           />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
-          <Route path="IllSearch" element={<IllSearch />} />
-          <Route path="chats" element={<HomeChat />} />
+          <Route
+            path="IllSearch"
+            element={
+              <ProtectedRoute>
+                <IllSearch />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="chats"
+            element={
+              <ProtectedRoute>
+                <HomeChat />
+              </ProtectedRoute>
+            }
+          />
         </Route>
       </Routes>
     </BrowserRouter>
