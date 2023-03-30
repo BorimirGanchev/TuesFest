@@ -1,4 +1,9 @@
+body {
+  background-color: #222;
+}
+
 .input2 {
+  margin-top: 30vh;
   height: 100vh;
   background-color: #222;
   padding: 10px;
@@ -33,6 +38,7 @@
   color: rgb(82, 82, 82);
 }
 .input2 .send {
+  margin-top: 5vh;
   display: flex;
   align-items: center;
   gap: 10px;

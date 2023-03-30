@@ -14,6 +14,7 @@ import { db, storage } from "../firebase-config/firebase-config";
 import { v4 as uuid } from "uuid";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import "./NavbarStyle.css";
+
 const Input = () => {
   const [text, setText] = useState("");
   const [img, setImg] = useState(null);
