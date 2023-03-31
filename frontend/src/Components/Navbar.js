@@ -58,7 +58,7 @@ function Navbar() {
         <li>
           <p className="nav-links-mobile">
             <Link
-              to="http://localhost:3000/register"
+              to="http://localhost:3000/profile"
               style={{ textDecoration: "none", color: "black" }}
             >
               <img

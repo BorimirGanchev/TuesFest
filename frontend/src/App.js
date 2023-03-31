@@ -7,6 +7,7 @@ import Register from "./Pages/Register";
 import IllSearch from "./Components/IllSearch";
 import { AuthContext } from "./context/auth-context-firebase-trash";
 import HomeChat from "./Pages/HomeChat";
+import Profile from "./Pages/Profile";
 function App() {
   const { currentUser } = useContext(AuthContext);
 
@@ -37,6 +38,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <IllSearch />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
               </ProtectedRoute>
             }
           />
