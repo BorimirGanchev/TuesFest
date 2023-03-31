@@ -31,7 +31,7 @@ function Navbar() {
           <p className="nav-links">
             <i className="fa-sharp fa-solid fa-magnifying-glass"></i>
             <Link
-              to="/illsearch"
+              to="http://localhost:3000/illsearch"
               style={{ textDecoration: "none", color: "white" }}
             >
               Search
@@ -41,7 +41,10 @@ function Navbar() {
         <li>
           <p className="nav-links">
             <i className="fa-solid fa-comments"></i>
-            <Link to="chats" style={{ textDecoration: "none", color: "white" }}>
+            <Link
+              to="http://localhost:3000/chats"
+              style={{ textDecoration: "none", color: "white" }}
+            >
               Chat
             </Link>
           </p>
@@ -55,7 +58,7 @@ function Navbar() {
         <li>
           <p className="nav-links-mobile">
             <Link
-              to="/register"
+              to="http://localhost:3000/register"
               style={{ textDecoration: "none", color: "black" }}
             >
               <img
