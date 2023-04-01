@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../Styles/profile.css"
 import { AuthContext } from '../context/auth-context-firebase-trash'
 import { useContext } from "react";
+
 const Profile = () => {
     const {currentUser} = useContext(AuthContext)
+    useEffect(()=>{
+        console.log(currentUser.isDoc);
+        console.log("penis")
+    })
         return(
             <div className="page">
                 <div className="box">
@@ -21,7 +26,7 @@ const Profile = () => {
                             <span>Email: {currentUser.email}</span>
                         </div>
                         <div className="status">
-                            <span>Status: </span>
+                            <span>Status: {currentUser.isDoc?"Doctor":"Patient"}</span>
                         </div>
                     </div>
                 </div>

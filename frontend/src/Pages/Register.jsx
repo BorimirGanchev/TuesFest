@@ -20,7 +20,7 @@ const Register = () => {
     const file = e.target[3].files[0];
     const check = e.target[4].value;
     console.log(check)
-    let isDoc = (check == "on") ? true : false; 
+    let isDoc = (check === "on") ? true : false; 
     try {
       //Create user
       const res = await createUserWithEmailAndPassword(auth, email, password);
