@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import axios from "axios";
 import "../Styles/Register.css"
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import Add from "../Pictures2/addAvatar.png"
@@ -10,6 +11,21 @@ const Register = () => {
     const [err, setErr] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  function authDoctor (url,name){//returns a promise whether a doc wuth this name has been found or not
+    return axios.get(url,
+      {
+        params:{name: name,}
+      }).then((response) => {
+      console.log(response);
+      console.log("succesful auth");
+    }).catch(error =>{
+      console.log(error);
+    });
+  }
+
+//
+//axios
+//
 
   const handle_submit = async (e) => {
     setLoading(true);
@@ -24,7 +40,7 @@ const Register = () => {
     try {
       //Create user
       const res = await createUserWithEmailAndPassword(auth, email, password);
-
+      await authDoctor("http://localhost:5000/api/docs",displayName)
       //Create a unique image name
       const date = new Date().getTime();
       const storageRef = ref(storage, `${displayName + date}`);
@@ -36,6 +52,7 @@ const Register = () => {
             await updateProfile(res.user, {
               displayName,
               photoURL: downloadURL,
+              isDoc,
             });
             //create user on firestore
             await setDoc(doc(db, "users", res.user.uid), {
@@ -43,7 +60,7 @@ const Register = () => {
               displayName,
               email,
               photoURL: downloadURL,
-              isDoc,
+              isDoc : isDoc,
             });
 
             //create empty user chats on firestore

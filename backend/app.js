@@ -14,8 +14,7 @@ const db_connection = require("./db/connect-db");
 
 app.use(cors());
 app.use(express.json());
-app.use(Middleware.decodeToken);
-
+app.use("/api",  routes);
 //
 //
 //middleware
