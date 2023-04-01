@@ -18,7 +18,9 @@ const Register = () => {
     const email = e.target[1].value;
     const password = e.target[2].value;
     const file = e.target[3].files[0];
-console.log(e.target)
+    const check = e.target[4].value;
+    console.log(check)
+    let isDoc = (check == "on") ? true : false; 
     try {
       //Create user
       const res = await createUserWithEmailAndPassword(auth, email, password);
@@ -41,6 +43,7 @@ console.log(e.target)
               displayName,
               email,
               photoURL: downloadURL,
+              isDoc,
             });
 
             //create empty user chats on firestore
@@ -75,7 +78,7 @@ console.log(e.target)
                 <img src={Add} alt="" />
                 <span>Add an avatar</span>
             </label>
-            <imput type="checkbox" />
+            <input type="checkbox" placeholder = "i am a doctor"/>
             {err && <span>error in creating user</span>}
             <button>Sign up</button>
             </form>
