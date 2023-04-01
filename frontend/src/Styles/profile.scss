@@ -1,0 +1,70 @@
+.page{
+    background-color: #222;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .box{
+        background-color: #5d5b8d;
+        padding: 20px 60px;
+        border-radius: 10px;
+        width: 30%;
+        height: 50%;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-gap: 10px 10px;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
+        grid-template-rows: 30px 100px 150px;
+        grid-template-areas: 
+            "header header header"
+            "menu main main"
+            "menu main main";
+
+        .titleName {
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            padding: 25px 0px 0px;
+            font-size: 30px;
+            grid-area: header;
+        }
+
+        .profilePicture{
+            grid-area: menu;
+            background-size: cover;
+
+            img {
+                width: 100px;
+                border-radius: 100vmax;
+                aspect-ratio: 1;
+            }
+        }
+
+        .data{
+            color: #fff;
+            font-weight: bold;
+            font-size: 20px;
+            grid-area: main;
+
+            .name{
+                background-color: #222;
+                border: 10px solid #222;
+                border-radius: 10px;
+            }
+            .email{
+                margin-top: 2%;
+                background-color: #222;
+                border: 10px solid #222;
+                border-radius: 10px;
+            }
+            .status{
+                margin-top: 2%;
+                background-color: #222;
+                border: 10px solid #222;
+                border-radius: 10px;
+            }
+        }
+    }
+}
