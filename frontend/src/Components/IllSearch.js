@@ -3,6 +3,7 @@ import "../Styles/IllSearch.css";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Illnes from "./illnes";
 const IllSearch = () => {
   const [symptoms, updateSymptoms] = React.useState("");
   function handleSearch() {
@@ -32,6 +33,7 @@ const IllSearch = () => {
           <Link to={`/chats?symptoms=${symptoms}`}>send to your doctor</Link>
         </button>
       </div>
+      <Illnes/>
     </div>
   );
 };
