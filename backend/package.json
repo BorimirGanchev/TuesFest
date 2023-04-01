@@ -19,6 +19,8 @@
     "firebase-admin": "^11.5.0",
     "mongodb": "5.1",
     "mongoose": "^7.0.2",
-    "nodemon": "^2.0.21"
+    "natural": "^6.2.0",
+    "nodemon": "^2.0.21",
+    "pos": "^0.4.2"
   }
 }

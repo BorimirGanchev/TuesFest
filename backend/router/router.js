@@ -1,6 +1,11 @@
 const express = require("express");
 const router = express.Router();
-
-router.route("/").get();
-
+const {
+  getIllnes,
+  createIllness,
+  getDoc,
+  createDoc,
+} = require("../controllers/controllers");
+router.route("/illness").get(getIllnes).post(createIllness);
+router.route("/docs").get(getDoc).post(createDoc);
 module.exports = router;
