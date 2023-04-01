@@ -18,7 +18,7 @@ const Register = () => {
     const email = e.target[1].value;
     const password = e.target[2].value;
     const file = e.target[3].files[0];
-
+console.log(e.target)
     try {
       //Create user
       const res = await createUserWithEmailAndPassword(auth, email, password);
@@ -70,12 +70,12 @@ const Register = () => {
             <input required type="text" placeholder="display name" />
             <input required type="email" placeholder="email" />
             <input required type="password" placeholder="password" />
-            <imput type="checkbox" />
             <input required style={{ display: "none" }} type="file" id="file" />
             <label htmlFor="file">
                 <img src={Add} alt="" />
                 <span>Add an avatar</span>
             </label>
+            <imput type="checkbox" />
             {err && <span>error in creating user</span>}
             <button>Sign up</button>
             </form>
