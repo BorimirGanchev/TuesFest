@@ -8,10 +8,8 @@ function Login() {
         const navigate = useNavigate();
         const handle_submit = async (e) => {
             e.preventDefault();
-            console.log("Test");
             const email = e.target[0].value;
             const password = e.target[1].value;
-              console.log(email);
             try {
               await signInWithEmailAndPassword(auth, email, password);
               navigate("/")
