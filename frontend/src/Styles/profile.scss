@@ -16,7 +16,7 @@
         justify-content: center;
         grid-gap: 10px 10px;
         grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
-        grid-template-rows: 30px 100px 150px;
+        grid-template-rows: 90px 100px 150px;
         grid-template-areas: 
             "header header header"
             "menu main main"
@@ -34,11 +34,12 @@
         .profilePicture{
             grid-area: menu;
             background-size: cover;
+            margin-top: -80px;
 
             img {
                 width: 100px;
                 border-radius: 100vmax;
-                aspect-ratio: 1;
+                aspect-ratio: 1; 
             }
         }
 
@@ -47,6 +48,7 @@
             font-weight: bold;
             font-size: 20px;
             grid-area: main;
+            margin-top: 20%;
 
             .name{
                 background-color: #222;
@@ -64,6 +66,180 @@
                 background-color: #222;
                 border: 10px solid #222;
                 border-radius: 10px;
+            }
+
+            .description{
+                margin-top: 2%;
+                background-color: #222;
+                border: 10px solid #222;
+                border-radius: 10px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1612px){
+    .page{
+        .box{
+            .data{
+                margin-top: 30%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1566px){
+    .page{
+        .box{
+            width: 31%;
+            .data{
+                margin-top: 28%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1516px){
+    .page{
+        .box{
+            width: 32%;
+            .data{
+                margin-top: 28%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1468px){
+    .page{
+        .box{
+            width: 33%;
+            .data{
+                margin-top: 28%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1424px){
+    .page{
+        .box{
+            width: 34%;
+            .data{
+                margin-top: 28%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1382px){
+    .page{
+        .box{
+            width: 45%;
+            .data{
+                margin-top: 28%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1044px){
+    .page{
+        .box{
+            width: 53%;
+            .data{
+                margin-top: 28%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 886px){
+    .page{
+        .box{
+            width: 60%;
+            .data{
+                margin-top: 28%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 783px){
+    .page{
+        .box{
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .profilePicture{
+                margin-top: 3%;
+            }
+            .data{
+                margin-top: 0%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 474px){
+    .page{
+        .box{
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 60%;
+            .profilePicture{
+                margin-top: 3%;
+            }
+            .data{
+                margin-top: 0%;
+            }
+        }
+    }
+}
+
+@media screen and (max-height: 810px){
+    .page{
+        .box{
+            height: 60%;
+            .data{
+                margin-top: 30%;
+            }
+        }
+    }
+}
+
+@media screen and (max-height: 810px){
+    .page{
+        .box{
+            height: 70%;
+            .data{
+                margin-top: 30%;
+            }
+        }
+    }
+}
+
+@media screen and (max-height: 590px){
+    .page{
+        .box{
+            height: 80%;
+            .data{
+                margin-top: 30%;
+            }
+        }
+    }
+}
+
+@media screen and (max-height: 515px){
+    .page{
+        .box{
+            height: 90%;
+            .data{
+                margin-top: 30%;
             }
         }
     }

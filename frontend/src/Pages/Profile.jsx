@@ -4,10 +4,11 @@ import { AuthContext } from '../context/auth-context-firebase-trash'
 import { useContext } from "react";
 
 const Profile = () => {
+    const isDocStatic = true
+    const doctorDescriptionStatic = "I graduated from the Medical University in Sofia, Bulgaria. I have 2 years of experience at Pirogov Hospital."
     const {currentUser} = useContext(AuthContext)
     useEffect(()=>{
         console.log(currentUser.isDoc);
-        console.log("penis")
     })
         return(
             <div className="page">
@@ -26,8 +27,12 @@ const Profile = () => {
                             <span>Email: {currentUser.email}</span>
                         </div>
                         <div className="status">
-                            <span>Status: {currentUser.isDoc?"Doctor":"Patient"}</span>
+                            <span>Status: {isDocStatic?"Doctor":"Patient"}</span>
                         </div>
+                        {isDocStatic &&
+                            <div className="description">
+                            <span>Description: {doctorDescriptionStatic}</span>
+                        </div>}
                     </div>
                 </div>
             </div>

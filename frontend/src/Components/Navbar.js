@@ -68,6 +68,7 @@ function Navbar() {
                 style={{ width: "2rem", height: "2rem", borderRadius: "50%" }}
               />
             </Link>
+            Profile
           </p>
         </li>
       </ul>
