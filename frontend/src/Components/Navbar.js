@@ -1,6 +1,6 @@
 import "./NavbarStyle.css";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../context/auth-context-firebase-trash";
 import React from "react";
 function Navbar() {
@@ -11,7 +11,7 @@ function Navbar() {
       return !prevState;
     });
   };
-
+  
   return (
     <nav className="NavbarItems">
       <h1 className="logo">DocHelp</h1>

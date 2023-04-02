@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Illnes from "./illnes";
+import Illtext from "./Illtext";
 const IllSearch = () => {
   const [bolesti_data, set_bolesti_data] = React.useState();
   const [symptoms, updateSymptoms] = React.useState("");
@@ -38,26 +39,22 @@ const IllSearch = () => {
     console.log(symptoms);
   }
   return (
-    <div className="input2">
-      <Navbar />
-      <div className="text" style={{ marginTop: "30vh" }}>
-        <h2>
-          By entering symptoms, the search engine will show you probable
-          diseases.
-          <h6>
-            Please note that this is not active diagnosis and you should ask you
-            GP before taking any action.
-          </h6>
-        </h2>
+    <div className="illHome">
+      <div className="input2">
+        <Navbar />
+        <Illtext/>
+      <div className="componentsBox">
+        <input type="text" placeholder="I have..." onChange={handleChange} />
+        <div className="send">
+          <button onClick={handleSearch}>Search</button>
+          <button>
+            <Link to={`/chats?symptoms=${symptoms}`}>send to your doctor</Link>
+          </button>
+        </div>
+        <div className="bolesti-container">{bolesti_cards}</div>
+        
+        </div>
       </div>
-      <input type="text" placeholder="I have..." onChange={handleChange} />
-      <div className="send">
-        <button onClick={handleSearch}>Search</button>
-        <button>
-          <Link to={`/chats?symptoms=${symptoms}`}>send to your doctor</Link>
-        </button>
-      </div>
-      <div className="bolesti-container">{bolesti_cards}</div>
     </div>
   );
 };
