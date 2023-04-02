@@ -2,7 +2,8 @@ const illness = require("../db-models/ilness-schema");
 const doctor = require("../db-models/doctor-schema");
 const pos = require("pos");
 const getIllnes = async (req, res) => {
-  const symptoms = req.body.symptoms;
+  const symptoms = "cough";
+  console.log(req.params);
   const words = new pos.Lexer().lex(symptoms);
   const taggedWords = new pos.Tagger().tag(words);
   const nouns = [];

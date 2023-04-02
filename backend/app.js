@@ -5,7 +5,7 @@ const app = express();
 const Middleware = require("./middleware");
 const routes = require("./router/router");
 const db_connection = require("./db/connect-db");
-
+const bodyParser = require("body-parser");
 //
 //
 // requiremmnts
@@ -13,8 +13,9 @@ const db_connection = require("./db/connect-db");
 //
 
 app.use(cors());
+app.use(bodyParser.json());
 app.use(express.json());
-app.use("/api",  routes);
+app.use("/api", routes);
 //
 //
 //middleware
