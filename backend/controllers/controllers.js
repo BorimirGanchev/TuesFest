@@ -2,8 +2,8 @@ const illness = require("../db-models/ilness-schema");
 const doctor = require("../db-models/doctor-schema");
 const pos = require("pos");
 const getIllnes = async (req, res) => {
-  const symptoms = "cough";
-  console.log(req.params);
+  const symptoms = req.query.symptoms;
+  console.log(req.query.symptoms);
   const words = new pos.Lexer().lex(symptoms);
   const taggedWords = new pos.Tagger().tag(words);
   const nouns = [];
@@ -46,9 +46,10 @@ const createIllness = async (req, res) => {
 
 const getDoc = async (req, res, next) => {
   try {
-    const doc = await doctor.find({ name: req.params.name });
-    console.log(req.params);
-    res.status(200).json({ doc });
+    console.log(req.query);
+    const doc = await doctor.find({ name: req.query.name });
+    console.log("doc name" + doc[0]);
+    res.send(doc);
   } catch (error) {
     console.log(error);
     res.status(500).json({ err });

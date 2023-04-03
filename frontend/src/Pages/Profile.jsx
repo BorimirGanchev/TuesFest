@@ -2,13 +2,28 @@ import React, { useEffect } from "react";
 import "../Styles/profile.css"
 import { AuthContext } from '../context/auth-context-firebase-trash'
 import { useContext } from "react";
-
+import axios from "axios";
 const Profile = () => {
-    const isDocStatic = true
+    const [isDoc,validateDoc] = React.useState(false)
     const doctorDescriptionStatic = "I graduated from the Medical University in Sofia, Bulgaria. I have 2 years of experience at Pirogov Hospital."
     const {currentUser} = useContext(AuthContext)
+    async function findDoc(){
+        try{
+            let doc = await axios.get('http://localhost:5000/api/docs',{
+            params:{name: currentUser.displayName,}
+        }
+        )
+        if(doc.data.length > 0){
+            validateDoc(true)
+        }
+        
+    }catch(err){
+            console.log(err);
+        }
+    }
     useEffect(()=>{
         console.log(currentUser.isDoc);
+        findDoc()
     })
         return(
             <div className="page">
@@ -27,9 +42,9 @@ const Profile = () => {
                             <span>Email: {currentUser.email}</span>
                         </div>
                         <div className="status">
-                            <span>Status: {isDocStatic?"Doctor":"Patient"}</span>
+                            <span>Status: {isDoc?"Doctor":"Patient"}</span>
                         </div>
-                        {isDocStatic &&
+                        {isDoc &&
                             <div className="description">
                             <span>Description: {doctorDescriptionStatic}</span>
                         </div>}

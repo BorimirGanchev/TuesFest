@@ -9,15 +9,15 @@ import { doc, setDoc } from "firebase/firestore";
 import { useNavigate, Link } from "react-router-dom";
 const Register = () => {
     const [err, setErr] = useState(false);
+    //TODO: setDocErr
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  function authDoctor (url,name){//returns a promise whether a doc wuth this name has been found or not
-    return axios.get(url,
+  async function authDoctor (url,name){//returns a promise whether a doc wuth this name has been found or not
+    return await axios.get(url,
       {
         params:{name: name,}
       }).then((response) => {
-      console.log(response);
-      console.log("succesful auth");
+      console.log("");
     }).catch(error =>{
       console.log(error);
     });
@@ -39,8 +39,21 @@ const Register = () => {
     let isDoc = (check === "on") ? true : false; 
     try {
       //Create user
+      if(isDoc){
+        await authDoctor("http://localhost:5000/api/docs",displayName).then((response) => {
+          console.dir("res from api " + response)
+          setErr(true)
+          console.log("succesful auth");
+        }).catch((err) => {
+          console.log(err);
+          setErr(true);
+        })
+      }
+      if(err){
+        return;
+      }
       const res = await createUserWithEmailAndPassword(auth, email, password);
-      await authDoctor("http://localhost:5000/api/docs",displayName)
+      
       //Create a unique image name
       const date = new Date().getTime();
       const storageRef = ref(storage, `${displayName + date}`);
