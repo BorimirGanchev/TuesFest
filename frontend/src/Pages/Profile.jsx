@@ -38,6 +38,8 @@ const Profile = () => {
                         <div className="name">
                             <span>Name: {currentUser.displayName}</span>
                         </div>
+                    </div>
+                    <div className="footer">
                         <div className="email">
                             <span>Email: {currentUser.email}</span>
                         </div>
