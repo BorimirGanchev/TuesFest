@@ -10,13 +10,25 @@ import { useNavigate, Link } from "react-router-dom";
 import { authDoctorFromMongo } from "../doc-auth/auth-doc";
 const Register = () => {
     const [err, setErr] = useState(false);
+    const [checked,setCheck] = useState(false);
     //TODO: setDocErr
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  async function authDoctor (url,name){//returns a promise whether a doc wuth this name has been found or not
+    return await axios.get(url,
+      {
+        params:{name: name,}
+      })
+  }
+
 //
 //axios
 //
-
+  function changeCheck(){
+    setCheck((prevCheck) => {
+      return !prevCheck
+    })
+  }
   const handle_submit = async (e) => {
     setErr(false)
     setLoading(true);
@@ -26,23 +38,26 @@ const Register = () => {
     const password = e.target[2].value;
     const file = e.target[3].files[0];
     const check = e.target[4].value;
-    let isDoc = (check === "on") ? true : false; 
+    
     try {
       //Create user
-      if(isDoc){
-        var doc_arr = await authDoctorFromMongo("http://localhost:5000/api/docs",displayName).catch((err) => {
+      if(checked){
+        const doc_arr = await authDoctor("http://localhost:5000/api/docs",displayName).catch((err) => {
           console.log(err);
           setErr(true);
+          console.log(doc_arr.length)
         })
+        if(doc_arr.length === 0){
+          setErr(true)
+          return;
+        }
       console.log(doc_arr.data.length)
-      }
-      if(doc_arr.data.length == 0) {
-        setErr(true);
-        return;
-      }
       if(err){
         return;
       }
+      }
+      console.log(err)
+      if(err == false){
       const res = await createUserWithEmailAndPassword(auth, email, password);
       
       //Create a unique image name
@@ -56,7 +71,7 @@ const Register = () => {
             await updateProfile(res.user, {
               displayName,
               photoURL: downloadURL,
-              isDoc,
+              checked,
             });
             //create user on firestore
             await setDoc(doc(db, "users", res.user.uid), {
@@ -64,7 +79,7 @@ const Register = () => {
               displayName,
               email,
               photoURL: downloadURL,
-              isDoc : isDoc,
+              checked : checked,
             });
 
             //create empty user chats on firestore
@@ -76,7 +91,7 @@ const Register = () => {
             setLoading(false);
           }
         });
-      });
+      });}
     } catch (err) {
       setErr(true);
       setLoading(false);
@@ -99,7 +114,7 @@ const Register = () => {
                 <img src={Add} alt="" />
                 <span>Add an avatar</span>
             </label>
-            <input type="checkbox" placeholder = "i am a doctor"/>
+            <input type="checkbox" placeholder = "i am a doctor" checked={checked} onChange={changeCheck}/>
             {err && <span>error in creating user</span>}
             <button>Sign up</button>
             </form>
