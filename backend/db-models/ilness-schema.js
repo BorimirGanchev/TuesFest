@@ -4,6 +4,10 @@ const IllnessSchema = new mongoose.Schema({
     type: String,
     required: [true, "snimka must be provided"],
   },
+  snimka_uri: {
+    type: Buffer,
+    required: [true, "snimka_uri must be provided"],
+  },
   description: {
     type: String,
     required: [true, "description must be provided"],

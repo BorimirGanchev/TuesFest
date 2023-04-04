@@ -52,7 +52,7 @@ const getDoc = async (req, res, next) => {
     res.send(doc);
   } catch (error) {
     console.log(error);
-    res.status(500).json({ err });
+    res.status(500).json({ error });
   }
 };
 

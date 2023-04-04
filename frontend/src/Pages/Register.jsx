@@ -17,9 +17,10 @@ const Register = () => {
       {
         params:{name: name,}
       }).then((response) => {
-      console.log("");
+      return response
     }).catch(error =>{
       console.log(error);
+      return error
     });
   }
 
@@ -28,6 +29,7 @@ const Register = () => {
 //
 
   const handle_submit = async (e) => {
+    setErr(true)
     setLoading(true);
     e.preventDefault();
     const displayName = e.target[0].value;
@@ -35,19 +37,17 @@ const Register = () => {
     const password = e.target[2].value;
     const file = e.target[3].files[0];
     const check = e.target[4].value;
-    console.log(check)
     let isDoc = (check === "on") ? true : false; 
     try {
       //Create user
       if(isDoc){
-        await authDoctor("http://localhost:5000/api/docs",displayName).then((response) => {
-          console.dir("res from api " + response)
-          setErr(true)
-          console.log("succesful auth");
-        }).catch((err) => {
+        var doc_arr = await authDoctor("http://localhost:5000/api/docs",displayName).catch((err) => {
           console.log(err);
           setErr(true);
         })
+      }
+      if(doc_arr.data.length === 0) {
+        setErr(true);
       }
       if(err){
         return;
