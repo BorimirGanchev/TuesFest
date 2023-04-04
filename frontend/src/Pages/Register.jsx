@@ -7,29 +7,18 @@ import { auth, db, storage } from "../firebase-config/firebase-config";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
 import { useNavigate, Link } from "react-router-dom";
+import { authDoctorFromMongo } from "../doc-auth/auth-doc";
 const Register = () => {
     const [err, setErr] = useState(false);
     //TODO: setDocErr
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  async function authDoctor (url,name){//returns a promise whether a doc wuth this name has been found or not
-    return await axios.get(url,
-      {
-        params:{name: name,}
-      }).then((response) => {
-      return response
-    }).catch(error =>{
-      console.log(error);
-      return error
-    });
-  }
-
 //
 //axios
 //
 
   const handle_submit = async (e) => {
-    setErr(true)
+    setErr(false)
     setLoading(true);
     e.preventDefault();
     const displayName = e.target[0].value;
@@ -41,13 +30,15 @@ const Register = () => {
     try {
       //Create user
       if(isDoc){
-        var doc_arr = await authDoctor("http://localhost:5000/api/docs",displayName).catch((err) => {
+        var doc_arr = await authDoctorFromMongo("http://localhost:5000/api/docs",displayName).catch((err) => {
           console.log(err);
           setErr(true);
         })
+      console.log(doc_arr.data.length)
       }
-      if(doc_arr.data.length === 0) {
+      if(doc_arr.data.length == 0) {
         setErr(true);
+        return;
       }
       if(err){
         return;

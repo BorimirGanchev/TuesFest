@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState,useEffect } from "react";
 import Img from "../Pictures2/img.png";
 import Attach from "../Pictures2/attach.png";
 import { AuthContext } from "../context/auth-context-firebase-trash";
@@ -14,14 +14,30 @@ import { db, storage } from "../firebase-config/firebase-config";
 import { v4 as uuid } from "uuid";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import "./NavbarStyle.css";
-
+import { authDoctorFromMongo } from "../doc-auth/auth-doc";
 const Input = () => {
   const [text, setText] = useState("");
   const [img, setImg] = useState(null);
-
+  const [isDoc,setDoc] = useState(false);
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
+  async function attachFileToCurrentPatient(){
 
+  }
+  useEffect(() => {
+    console.dir(data)
+    async function fetchData() {
+      try {
+        const docAuth = await authDoctorFromMongo("http://localhost:5000/api/docs",currentUser.displayName);
+        if (docAuth.data.length > 0) {
+          setDoc(true);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    fetchData()
+  },)
   const handleSend = async () => {
     if (img) {
       const storageRef = ref(storage, uuid());
@@ -94,6 +110,7 @@ const Input = () => {
           <img src={Img} alt="" />
         </label>
         <button onClick={handleSend} className = "send-message">Send</button>
+        {isDoc && <button onClick = {attachFileToCurrentPatient}>Attach document</button>}
       </div>
     </div>
   );
