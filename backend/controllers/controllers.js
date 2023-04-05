@@ -1,5 +1,6 @@
 const illness = require("../db-models/ilness-schema");
 const doctor = require("../db-models/doctor-schema");
+const user = require("../db-models/user-schema");
 const pos = require("pos");
 const getIllnes = async (req, res) => {
   const symptoms = req.query.symptoms;
@@ -72,9 +73,52 @@ const createDoc = async (req, res) => {
 //
 //
 
+const addDocumentToUser = async (req, res) => {
+  try {
+    const newDocument = req.body.document;
+    const name = req.body.name;
+    const updatedUser = await user.findOneAndUpdate(
+      { name: name },
+      { $push: { documents: newDocument } },
+      { new: true }
+    );
+    res.send(updatedUser);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error });
+  }
+};
+const createUser = async (req, res) => {
+  try {
+    const newUser = await user.create(req.body);
+    res.status(200).json({ newUser });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error });
+  }
+};
+
+const getUserDocuments = async (req, res) => {
+  try {
+    const documents = await user.find({ name: req.query.name });
+    res.send(documents);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//
+//
+//users
+//
+//
+
 module.exports = {
   getIllnes,
   createIllness,
   getDoc,
   createDoc,
+  createUser,
+  getUserDocuments,
+  addDocumentToUser,
 };

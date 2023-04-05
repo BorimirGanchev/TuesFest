@@ -15,7 +15,7 @@ import { v4 as uuid } from "uuid";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import "./NavbarStyle.css";
 import { authDoctorFromMongo } from "../doc-auth/auth-doc";
-const Input = () => {
+const Input = (props) => {
   const [text, setText] = useState("");
   const [img, setImg] = useState(null);
   const [isDoc,setDoc] = useState(false);
@@ -25,6 +25,9 @@ const Input = () => {
 
   }
   useEffect(() => {
+    console.log("------------------")
+    console.dir(props.magic)
+    console.log("------------------")
     console.dir(data)
     async function fetchData() {
       try {
