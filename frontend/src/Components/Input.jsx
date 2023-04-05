@@ -15,6 +15,7 @@ import { v4 as uuid } from "uuid";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import "./NavbarStyle.css";
 import { authDoctorFromMongo } from "../doc-auth/auth-doc";
+import AddDocument from "./AttachFile";
 const Input = (props) => {
   const [text, setText] = useState("");
   const [img, setImg] = useState(null);
@@ -94,7 +95,8 @@ const Input = (props) => {
     setImg(null);
   };
   return (
-    <div className="input">
+    <div className="input"> 
+    <AddDocument className = "addDoc" style = {{}} name = {props.magic}/>
       <input
         type="text"
         placeholder="Type something..."
@@ -114,6 +116,7 @@ const Input = (props) => {
         </label>
         <button onClick={handleSend} className = "send-message">Send</button>
         {isDoc && <button onClick = {attachFileToCurrentPatient}>Attach document</button>}
+       
       </div>
     </div>
   );
