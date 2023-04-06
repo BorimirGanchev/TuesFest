@@ -26,6 +26,7 @@ const IllSearch = () => {
     const bolesti_arr = bolesti_data.map((bolest) => {
       return (
         <Illnes
+          snimka={bolest.snimka}
           name={bolest.description}
           description={bolest.symptoms}
           lechenie={bolest.lechenie}
@@ -42,17 +43,13 @@ const IllSearch = () => {
     <div className="illHome">
       <div className="input2">
         <Navbar />
-        <Illtext/>
-      <div className="componentsBox">
-        <input type="text" placeholder="I have..." onChange={handleChange} />
-        <div className="send">
-          <button onClick={handleSearch}>Search</button>
-          <button>
-            <Link to={`/chats?symptoms=${symptoms}`}>send to your doctor</Link>
-          </button>
-        </div>
-        <div className="bolesti-container">{bolesti_cards}</div>
-        
+        <Illtext />
+        <div className="componentsBox">
+          <input type="text" placeholder="I have..." onChange={handleChange} />
+          <div className="send">
+            <button onClick={handleSearch}>Search</button>
+          </div>
+          <div className="bolesti-container">{bolesti_cards}</div>
         </div>
       </div>
     </div>
