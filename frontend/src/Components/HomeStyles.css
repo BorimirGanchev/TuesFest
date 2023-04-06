@@ -26,30 +26,27 @@ body{
   flex: 1;
   position: relative;
 }
-
-.Text {
-  padding: 70px 70px;
+.Image{
+  display: flex;
 }
-
 .image {
-  
   width: 100%;
   filter: brightness(40%); 
 }
-.mainText{
+.mainTextContainer{
   position: absolute;
   top: 30%;
   left: 50%;
   width: 100%;
+  height: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
-  gap: 100px;
 }
 
 .bigText {
   position: absolute;
-  top: 10%;
+  top: 45%;
   left: 50%;
   width: 70%;
   text-align: center;
@@ -58,11 +55,10 @@ body{
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 470%;
   z-index: 2;
-  filter: brightness(200%);
 }
 .smallText {
   position: absolute;
-  top: 40%;
+  top: 60%;
   left: 50%;
   width: 65%;
   text-align: center;
@@ -71,66 +67,20 @@ body{
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 200%;
   z-index: 2;
-  filter: brightness(200%);
 }
-.arrow{
+
+.arrowButton{
   color: #fff;
   text-decoration: none;
   position: absolute;
   font-size: 400%;
   top: 90%;
   left: 50%;
-}
-
-.buttons{
-  position: absolute;
-  display: flex;
-  gap: 100px;
-  top: 60%;
-  left: 50%;
-}
-
-.transparent-button {
-  flex: 1;
-  position: absolute;
   background-color: transparent;
-  border: 2px solid #fff;
-  color: #fff;
-  padding: 10px 20px;
-  transform: translate(50%, 0%);
-  font-size: 35px;
-  resize: horizontal;
-  white-space: nowrap;
-  text-transform: uppercase;
-  transition: background-color 0.3s ease;
-  z-index: 2;
+  border: none;
 }
-
-.transparent-button:hover {
-  background-color: #1a2b56;
-  color: #fff;
-  border: 2px solid #1a2b56;
-}
-
-.notransparent-button {
-  flex: 1;
-  position: absolute;
-  background-color: #1a2b56;
-  border: 2px solid #1a2b56;
-  transform: translate(-150%, 0%);
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 35px;
-  white-space: nowrap;
-  text-transform: uppercase;
-  transition: background-color 0.3s ease;
-  z-index: 2;
-}
-
-.notransparent-button:hover {
-  background-color: transparent;
-  color: #fff;
-  border: 2px solid #fff;
+.arrowButton:hover{
+  cursor: pointer;
 }
 
 .aboutUs{
@@ -139,7 +89,7 @@ body{
   flex-direction: column;
   background-color: #222;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
 }
 .aboutUsText{
   color: #fff;
@@ -162,28 +112,39 @@ body{
 }
 .benefits{
   display: flex;
+  flex-direction: column;
   margin-top: 9%;
   font-size: 22px;
   justify-content: center;
   color: white;
 }
-.benefitsContent{
+.benefitsHeader{
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex: 1;
+  gap:20%;
 }
-.benefitsContentHeader{
+.icons{
   font-size: 60px;
   display: flex;
+  width: 10%;
+  text-align: center;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.aboutUsBenefitsParagraf{
+.benefitsParagraph{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
+  flex: 1;
+}
+.paragraph{
   color: #fff;
   font-size: 22px;
-  width: 40%;
+  width: 20%;
   text-align: center;
 }
 

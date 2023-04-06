@@ -21,30 +21,31 @@ function Home() {
               <p className="aboutUsParagraf">Doc Chat is a web application that allows faster and safer communication with doctors. Also, our platform provides an algorithm that can give hypothetical diseases based on symptoms</p>
             </div>
             <div className="benefits">
-              <div className="benefitsContent">
-                <div className="benefitsContentHeader">
+              <div className="benefitsHeader">
+                <div className="icons">
                   <i class="fa-regular fa-address-card"></i>
                   <h3 style={{fontSize:"30px"}}>Why us</h3>
-                  <p className="aboutUsBenefitsParagraf">iesdudsuf pi w8uewuu eiu wfehhisdsfd  aweefwsfwswfsf waFWSDF FWEDF  GESRERE sefgseg gfw</p>
                 </div>
-              </div>
-              <div className="benefitsContent">
-                <div className="benefitsContentHeader">
+                <div className="icons">
                   <i class="fa-solid fa-laptop-medical"></i>
                   <h3 style={{fontSize:"30px"}}>Our site</h3>
-                  <p className="aboutUsBenefitsParagraf">iesdudsuf pi w8uewuu eiu wfehhisdsfd  aweefwsfwswfsf waFWSDF FWEDF  GESRERE sefgseg gfw</p>
                 </div>
-              </div>
-              <div className="benefitsContent">
-                <div className="benefitsContentHeader">
+                <div className="icons">
                   <i class="fa-solid fa-gears"></i>
                   <h3 style={{fontSize:"30px"}}>What we offer</h3>
-                  <p className="aboutUsBenefitsParagraf">iesdudsuf pi w8uewuu eiu wfehhisdsfd  aweefwsfwswfsf waFWSDF FWEDF  GESRERE sefgseg gfw</p>
                 </div>
               </div>
-            </div>
-            <div className="ourServices">
-              
+              <div className="benefitsParagraph">
+                <div className="paragraph">
+                  <p className="aboutUsBenefits1Paragraf">Instead of the patient queuing up at the hospitals, through our app he will be able to contact his GP. Many of the hospital sites do not provide such direct contact with their staff.</p>
+                </div>
+                <div className="paragraph">
+                  <p className="aboutUsBenefits2Paragraf">Our site is user friendly, accessible on all types of devices and with a few clicks you can get what you want.</p>
+                </div>
+                <div className="paragraph">
+                  <p className="aboutUsBenefits3Paragraf">We provide fast, safe and instant connection to doctors, specialists and consultants.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
