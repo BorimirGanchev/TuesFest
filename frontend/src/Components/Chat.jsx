@@ -18,7 +18,7 @@ const Chat = () => {
         </div>
       </div>
       <Messages />
-      <Input/>
+      <Input magic = {data.user?.displayName}/>
     </div>
   );
 };
