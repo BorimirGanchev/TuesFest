@@ -3,6 +3,7 @@ import "../Styles/profile.css"
 import { AuthContext } from '../context/auth-context-firebase-trash'
 import { useContext } from "react";
 import axios from "axios";
+import UserDocuments from "../Components/UserDocuments";
 const Profile = () => {
     const [isDoc,validateDoc] = React.useState(false)
     const doctorDescriptionStatic = "I graduated from the Medical University in Sofia, Bulgaria. I have 2 years of experience at Pirogov Hospital."
@@ -50,6 +51,7 @@ const Profile = () => {
                             <div className="description">
                             <span>Description: {doctorDescriptionStatic}</span>
                         </div>}
+                        <UserDocuments name = {currentUser.displayName}/>
                     </div>
                 </div>
             </div>
