@@ -4,7 +4,7 @@ import More from "../Pictures2/more.png";
 import Messages from "./Messages";
 import Input from "./Input";
 import { ChatContext } from "../context/chat-context-firebase";
-
+import UserDocuments from "./UserDocuments";
 const Chat = () => {
   const { data } = useContext(ChatContext);
 
@@ -15,6 +15,7 @@ const Chat = () => {
         <div className="chatIcons">
           <img src={Add} alt="" />
           <img src={More} alt="" />
+          <UserDocuments name = {data.user?.displayName}/>
         </div>
       </div>
       <Messages />

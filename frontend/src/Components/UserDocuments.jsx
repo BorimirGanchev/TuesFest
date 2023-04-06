@@ -1,6 +1,10 @@
 import React,{useState,useEffect} from "react";
 import axios from "axios";
+import "../Styles/userDocuments.css"
 export default function UserDocuments(props){
+    const [show,setShow] = useState({
+        display:"none",
+    })
     const [UserDocuments,setUserDocuments] = useState();
     const getUserDocuments = async() => {
             try{
@@ -18,16 +22,26 @@ export default function UserDocuments(props){
             }
                 await setUserDocuments(documents);
                 console.log(UserDocuments);
+                setShow({
+                    display:"block",
+                })
             }catch(e){
                 console.log(e);
             }
         }
-        
+        function closeDocs(){
+            setShow({
+                display:"none",
+            })
+        }
    
     return (
         <div className="user-documents-container">
             <button onClick = {getUserDocuments}>Click</button>
-            {UserDocuments}
+            <div className="douments" style = {show}>
+                <button className="close-user-docs" onClick={closeDocs}>X</button>
+                {UserDocuments}
+                </div>
         </div>
     )
 }
