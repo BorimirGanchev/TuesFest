@@ -11,6 +11,7 @@ import { authDoctorFromMongo } from "../doc-auth/auth-doc";
 const Register = () => {
     const [err, setErr] = useState(false);
     const [checked,setCheck] = useState(false);
+    const [avatar,setAvatar] = useState(Add);
     //TODO: setDocErr
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -42,19 +43,16 @@ const Register = () => {
     try {
       //Create user
       if(checked){
-        const doc_arr = await authDoctor("http://localhost:5000/api/docs",displayName).catch((err) => {
-          console.log(err);
-          setErr(true);
-          console.log(doc_arr.length)
-        })
-        if(doc_arr.length === 0){
-          setErr(true)
-          return;
+        try{
+          const doc = await authDoctorFromMongo("http://localhost:5000/api/docs",displayName);
+          console.log(doc.data);
+          if(doc.data.length === 0){
+            setErr(true);
+            return
+          }
+        }catch(e){
+          console.log(e);
         }
-      console.log(doc_arr.data.length)
-      if(err){
-        return;
-      }
       }
       console.log(err)
       if(err == false){
@@ -111,7 +109,7 @@ const Register = () => {
             <input required type="password" placeholder="password" />
             <input required style={{ display: "none" }} type="file" id="file" />
             <label htmlFor="file">
-                <img src={Add} alt="" />
+                <img src={avatar} alt="" />
                 <span>Add an avatar</span>
             </label>
             <input type="checkbox" placeholder = "i am a doctor" checked={checked} onChange={changeCheck}/>
