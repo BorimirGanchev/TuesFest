@@ -34,7 +34,7 @@ function Navbar() {
               to="http://localhost:3000/illsearch"
               style={{ textDecoration: "none", color: "white" }}
             >
-              Search
+              Search Engine
             </Link>
           </p>
         </li>
@@ -48,12 +48,6 @@ function Navbar() {
               Chat
             </Link>
           </p>
-        </li>
-        <li>
-          <a className="nav-links" href="#">
-            <i className="fa-solid fa-circle-info"></i>
-            Info
-          </a>
         </li>
         <li>
           <p className="nav-links-mobile">

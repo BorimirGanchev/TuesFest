@@ -3,6 +3,7 @@ import "../Styles/profile.css"
 import { AuthContext } from '../context/auth-context-firebase-trash'
 import { useContext } from "react";
 import axios from "axios";
+import Navbar from "../Components/Navbar";
 const Profile = () => {
     const [isDoc,validateDoc] = React.useState(false)
     const doctorDescriptionStatic = "I graduated from the Medical University in Sofia, Bulgaria. I have 2 years of experience at Pirogov Hospital."
@@ -27,6 +28,7 @@ const Profile = () => {
     })
         return(
             <div className="page">
+               <Navbar/>
                 <div className="box">
                     <div className="titleName">
                         <span>Doc Chat Profile</span>
