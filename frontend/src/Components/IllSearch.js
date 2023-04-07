@@ -10,31 +10,31 @@ const IllSearch = () => {
   const [symptoms, updateSymptoms] = React.useState("");
   const [bolesti_cards, set_bolesti_cards] = React.useState();
   async function handleSearch() {
-    await axios
-      .get("http://localhost:5000/api/illness", {
+    try {
+      const axios_res = await axios.get("http://localhost:5000/api/illness", {
         params: {
           symptoms: symptoms,
         },
-      })
-      .then(function (response) {
-        console.log(response.data.illnesses[0]);
-        set_bolesti_data(response.data.illnesses);
-      })
-      .catch((err) => {
-        console.log(err);
       });
-    const bolesti_arr = bolesti_data.map((bolest) => {
-      return (
-        <Illnes
-          snimka={bolest.snimka}
-          name={bolest.description}
-          description={bolest.symptoms}
-          lechenie={bolest.lechenie}
-        />
-      );
-    });
-    set_bolesti_cards(bolesti_arr);
+      set_bolesti_data(axios_res.data.illnesses);
+      var bolesti_arr = bolesti_data
+        ? bolesti_data.map((bolest) => {
+            return (
+              <Illnes
+                snimka={bolest.snimka}
+                name={bolest.description}
+                description={bolest.symptoms}
+                lechenie={bolest.lechenie}
+              />
+            );
+          })
+        : "click again";
+      set_bolesti_cards(bolesti_arr);
+    } catch (err) {
+      console.log(err);
+    }
   }
+
   function handleChange(event) {
     updateSymptoms(event.target.value);
     console.log(symptoms);
