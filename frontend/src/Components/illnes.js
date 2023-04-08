@@ -11,7 +11,7 @@ function Illnes(props) {
         <p>{props.name}</p>
       </div>
       <div className="illnessImage">
-        <img src={props.snimka} alt="img" className="illImage" />
+        <img src={currentUser.photoURL} alt="img" className="illImage" />
       </div>
       <div className="illnessDecription">
         <p>{props.description}</p>

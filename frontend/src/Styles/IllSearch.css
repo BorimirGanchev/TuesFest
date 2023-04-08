@@ -9,44 +9,90 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .input2 {
-  width: 80%;
-  height: auto;
-  margin-top: 7%;
+  width: 100%;
+  background-color: #222;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
-.input2 .Illtext {
-  overflow: hidden;
+.input2 .navbarComponent {
+  flex: 1;
+  height: 10%;
 }
-.input2 .Illtext h2 {
+.input2 .backgroundImageContainer {
+  height: 90%;
+  width: 100%;
+  flex: 1;
+  position: relative;
+}
+.input2 .backgroundImageContainer .illSearchImage {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 100% 0;
+     object-position: 100% 0;
+  height: 65%;
+  width: 100%;
+  filter: brightness(40%);
+  border-top-right-radius: 15% 45%;
+  border-bottom-right-radius: 15% 45%;
+}
+.input2 .backgroundImageContainer .Illtext {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 100%;
+  height: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+}
+.input2 .backgroundImageContainer .Illtext .illMainText {
+  position: absolute;
+  top: 40%;
+  left: 21%;
+  width: 35%;
+  text-align: start;
+  transform: translate(-50%, -100%);
   color: white;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 300%;
-  text-align: center;
+  z-index: 2;
 }
-.input2 .Illtext h6 {
-  color: white;
+.input2 .backgroundImageContainer .Illtext .illSmallText {
+  position: absolute;
+  top: 80%;
+  left: 36%;
+  width: 65%;
+  text-align: start;
+  transform: translate(-50%, 90%);
+  color: rgb(226, 226, 226);
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-size: 200%;
-  text-align: center;
-  overflow-wrap: break-word;
+  font-size: 150%;
+  z-index: 2;
 }
-.input2 .componentsBox {
+.input2 .backgroundImageContainer .componentsBox {
   flex: 1;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   position: static;
 }
-.input2 .componentsBox input {
-  width: 50%;
+.input2 .backgroundImageContainer .componentsBox label {
+  position: absolute;
+  top: 40%;
+  left: 3%;
+  width: 80%;
+}
+.input2 .backgroundImageContainer .componentsBox input {
+  width: 100%;
   border: 4px solid white;
   height: 55px;
   border-radius: 50px;
@@ -54,27 +100,28 @@ body {
   outline: none;
   color: #ffffff;
   font-size: 20px;
-  padding-left: 10px;
 }
-.input2 .componentsBox input::-moz-placeholder {
+.input2 .backgroundImageContainer .componentsBox input::-moz-placeholder {
   color: rgb(82, 82, 82);
 }
-.input2 .componentsBox input::placeholder {
+.input2 .backgroundImageContainer .componentsBox input::placeholder {
   color: rgb(82, 82, 82);
 }
-.input2 .componentsBox .send {
-  margin-top: 4vh;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.input2 .componentsBox .send button {
+.input2 .backgroundImageContainer .componentsBox button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
   border: 4px solid white;
-  padding: 10px 15px;
+  padding: 5px 15px;
+  margin: 1%;
   border-radius: 25px;
   color: white;
   background-color: #8da4f1;
   cursor: pointer;
+}
+.input2 .backgroundImageContainer .componentsBox .send:hover button {
+  background-color: #4f65ac;
 }
 
 @media screen and (max-width: 629px) {
@@ -97,4 +144,4 @@ body {
   .input2 input {
     margin-top: -10%;
   }
-} /*# sourceMappingURL=IllSearch.css.map */
+}/*# sourceMappingURL=IllSearch.css.map */

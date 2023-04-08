@@ -42,15 +42,20 @@ const IllSearch = () => {
   return (
     <div className="illHome">
       <div className="input2">
-        <Navbar />
-        <Illtext />
-        <div className="componentsBox">
-          <input type="text" placeholder="I have..." onChange={handleChange} />
-          <div className="send">
-            <button onClick={handleSearch}>Search</button>
-          </div>
-          <div className="bolesti-container">{bolesti_cards}</div>
+        <div className="navbarComponent">
+          <Navbar />
         </div>
+        <div className="backgroundImageContainer">
+          <img className="illSearchImage" src="/Pictures/doctor2.jpg" alt="Doctor"></img>
+          <Illtext/>
+          <div className="componentsBox">
+            <label>
+              <input type="text" placeholder="I have..." onChange={handleChange} />
+              <button className="send" onClick={handleSearch}>Search</button>
+            </label>
+          </div>
+        </div>
+        <div className="bolesti-container">{bolesti_cards}</div>
       </div>
     </div>
   );

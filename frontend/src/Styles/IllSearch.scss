@@ -11,43 +11,85 @@ body{
   overflow-x: hidden;
 }
 .input2 {
-    width: 80%;
-    height: auto;
-    margin-top: 7%;
+    width: 100%;
+    background-color: #222;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 
+  .navbarComponent{
+    flex: 1;
+    height: 10%;
+  }
+  .backgroundImageContainer{
+    height: 90%;
+    width: 100%;
+    flex: 1;
+    position: relative;
+    .illSearchImage{
+      object-fit: cover;
+      object-position: 100% 0;
+      height: 65%;
+      width: 100%;
+      filter: brightness(40%); 
+      border-top-right-radius: 15% 45%;
+      border-bottom-right-radius: 15% 45%;
+    }
     .Illtext{
-      overflow-x: hidden;
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      width: 100%;
+      height: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
       
-      h2{
+      .illMainText{
+        position: absolute;
+        top: 40%;
+        left: 21%;
+        width: 35%;
+        text-align: start;
+        transform: translate(-50%, -100%);
         color: white;
         font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
         font-size: 300%;
-        text-align: center;
+        z-index: 2;
 
       }
-      h6{
-        color: white;
+      .illSmallText{
+        position: absolute;
+        top: 80%;
+        left: 36%;
+        width: 65%;
+        text-align: start;
+        transform: translate(-50%, 90%);
+        color: rgb(226, 226, 226);
         font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-        font-size: 200%;
-        
-        text-align: center;
-        overflow-wrap: break-word;
+        font-size: 150%;
+        z-index: 2;
       }
     }
 
     .componentsBox{
       flex: 1;
+      width: 100%;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       position: static;
+      label{
+        position: absolute;
+        top: 40%;
+        left: 3%;
+        width: 80%;
+      }
       input {
-        width: 50%;
+        width: 100%;
         border: 4px solid white;
         height: 55px;
         border-radius: 50px;
@@ -55,30 +97,34 @@ body{
         outline: none;
         color: #ffffff;
         font-size: 20px;
-        padding-left: 10px;
-  
+        
         &::placeholder {
           color: rgb(82, 82, 82);
         }
       }
   
-      .send {
-        margin-top:4vh;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-  
-        button {
-          border: 4px solid white;
-          padding: 10px 15px;
-          border-radius: 25px;
-          color: white;
-          background-color: #8da4f1;
-          cursor: pointer;
+      button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        border: 4px solid white;
+        padding: 5px 15px;
+        margin: 1%;
+        border-radius: 25px;
+        color: white;
+        background-color: #8da4f1;
+        cursor: pointer;
+      }
+
+      .send:hover{
+        button{
+          background-color: #4f65ac;
         }
       }
     }
   }
+}
 
   @media screen and (max-width: 629px){
     .input2{
