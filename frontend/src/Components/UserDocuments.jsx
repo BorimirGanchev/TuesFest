@@ -39,7 +39,7 @@ export default function UserDocuments(props){
                 console.log(userDocuments.data[0].documents)
                 if(userDocuments !== undefined){
                     var documents = userDocuments.data[0].documents.map((doc,index) => {
-                    return <div key={index}>{doc.name ? doc.name : doc.Name} <button onClick={()=>handleButtonClick(doc)}><i class="fa-solid fa-angle-down"></i></button> </div>
+                    return <div key={index}>{doc.name ? doc.name : doc.Name} <button onClick={()=>handleButtonClick(doc)}><i class="fa-solid fa-angle-down"></i></button></div>
                 })
             }
                 await setUserDocuments(documents);
@@ -82,7 +82,6 @@ export default function UserDocuments(props){
     )
 
     function DropdownMenu() {
-
         function DropdownItems(props){
             return(
                 <div className="menu-item">
@@ -90,15 +89,14 @@ export default function UserDocuments(props){
                 </div>
             )
         }
-    
         return(
             <div className="dropdown">
                 <DropdownItems><button className="showDocument" onClick = {getUserDocuments}>Show Documents</button></DropdownItems>
-                <DropdownItems><button className="showDocument">Create Documents</button></DropdownItems>
+                <DropdownItems><button className="showDocument">Create Documents</button></DropdownItems>{/*TODO */}
+                <AddDocument className = "addDocument"/>
             </div>
         )
-      }
-
+    }
     function Navbar (props) {
         return(
             <nav className="navbar">
@@ -109,7 +107,6 @@ export default function UserDocuments(props){
 
     function NavItems (props) {
         const[open,setOpen] = useState(false);
-    
         return(
             <li className="nav-item">
                 <div className="icon-button" onClick={() =>setOpen(!open)}>

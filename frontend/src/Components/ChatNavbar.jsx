@@ -15,5 +15,4 @@ const ChatNavbar = () => {
       </div>
     )
   }
-  
   export default ChatNavbar

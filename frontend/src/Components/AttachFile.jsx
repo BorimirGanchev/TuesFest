@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { ChatContext } from "../context/chat-context-firebase";
 export default function AddDocument(props) {
   const [formData, setFormData] = React.useState({
     Name: "",
@@ -15,18 +16,16 @@ export default function AddDocument(props) {
             Age: formData.Age,
             Address: formData.Address,
             Diagnosis: formData.Diagnosis,
-            Lechenie: FormData.Lechenie
+            Lechenie: formData.Lechenie,
+            Type:formData.type
           }
         : {};
     console.log(documentToBeSend);
-    await axios
+    try{await axios
       .post("http://localhost:5000/api/user", {
         name: props.name,
         document: documentToBeSend
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      })}catch(err){console.log(err)}
   }
   function handleChange(event) {
     const { name, value, type, checked } = event.target;
