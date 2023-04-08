@@ -1,8 +1,18 @@
 .user-documents-container{
     color :black;
-}
-.documents{
-    position:absolute;
-    top: 20%;
-    left:50%;
+    button{
+        background-color: transparent;
+        border: none;
+        color: white;
+        font-size: 150%;
+    }
+      button:hover{
+        color: rgb(201, 201, 201);
+    }
+
+    .documents{
+        position:absolute;
+        top: 20%;
+        left:50%;
+    }
 }

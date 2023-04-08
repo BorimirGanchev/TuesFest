@@ -1,8 +1,16 @@
 .user-documents-container {
   color: black;
 }
-
-.documents {
+.user-documents-container button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 150%;
+}
+.user-documents-container button:hover {
+  color: rgb(201, 201, 201);
+}
+.user-documents-container .documents {
   position: absolute;
   top: 20%;
   left: 50%;

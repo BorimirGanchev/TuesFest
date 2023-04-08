@@ -1,6 +1,4 @@
 import React, { useContext } from "react";
-import Add from "../Pictures2/add.png";
-import More from "../Pictures2/more.png";
 import Messages from "./Messages";
 import Input from "./Input";
 import { ChatContext } from "../context/chat-context-firebase";
@@ -13,8 +11,6 @@ const Chat = () => {
       <div className="chatInfo">
         <span>{data.user?.displayName}</span>
         <div className="chatIcons">
-          <img src={Add} alt="" />
-          <img src={More} alt="" />
           <UserDocuments name = {data.user?.displayName}/>
         </div>
       </div>

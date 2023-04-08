@@ -1,6 +1,9 @@
 import React,{useState,useEffect} from "react";
 import axios from "axios";
 import "../Styles/userDocuments.css"
+import DocumentsNavbar from "./showDocumentsNavbar";
+
+
 export default function UserDocuments(props){
     const [show,setShow] = useState({
         display:"none",
@@ -37,7 +40,10 @@ export default function UserDocuments(props){
    
     return (
         <div className="user-documents-container">
-            <button onClick = {getUserDocuments}>Click</button>
+            <DocumentsNavbar/>
+            <button onClick = {getUserDocuments}>
+                <i class="fa-solid fa-ellipsis"></i>
+            </button>
             <div className="douments" style = {show}>
                 <button className="close-user-docs" onClick={closeDocs}>X</button>
                 {UserDocuments}

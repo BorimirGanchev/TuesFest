@@ -5,8 +5,8 @@ import { AuthContext } from '../context/auth-context-firebase-trash'
 const ChatNavbar = () => {
   const {currentUser} = useContext(AuthContext)
     return (
-      <div className='navbar'>
-        <span className="logo">Doc Chat</span>
+      <div className="navbar">
+        <span className="logo">DocChat</span>
         <div className="user">
           <img src={currentUser.photoURL} alt="img" />
           <span>{currentUser.displayName}</span>
