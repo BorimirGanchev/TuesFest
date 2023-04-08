@@ -7,6 +7,17 @@ import AddDocument from "./AttachFile";
 
 
 export default function UserDocuments(props){
+    const [isDivVisible, setIsDivVisible] = useState(false);
+
+    const handleButtonClick = () => {
+      setIsDivVisible(!isDivVisible);
+      console.log("hellllo");
+    };
+
+    const divStyle = {
+        display: isDivVisible ? 'none' : 'flex',
+      };
+    
     const {data} = useContext(ChatContext)
     const [show,setShow] = useState({
         display:"none",
@@ -23,7 +34,7 @@ export default function UserDocuments(props){
                 console.log("---------user");
                 if(userDocuments != undefined){
                     var documents =userDocuments.data[0].documents.map((doc) => {
-                    return <div>{doc.name ? doc.name : doc.Name} </div>
+                    return <div>{doc.name ? doc.name : doc.Name} <button onClick={handleButtonClick}><i class="fa-solid fa-angle-down"></i></button> </div>
                 })
             }
                 await setUserDocuments(documents);
@@ -48,9 +59,15 @@ export default function UserDocuments(props){
                     <DropdownMenu/>
                 </NavItems>
             </Navbar>
-            <div className="douments" style = {show}>
-                <button className="close-user-docs" onClick={closeDocs}>X</button>
-                {UserDocuments}
+            <div className="documents" style = {show}>
+                <h1 className="yourDocumentsTitle">Your Documents</h1>
+                <button className="close-user-docs" onClick={closeDocs}><i class="fa-sharp fa-solid fa-circle-xmark"></i></button>
+                <div className="documentsContainer">
+                    <div className="eachDocument">{UserDocuments}</div>
+                    <div className="moreDataContainer" style={divStyle}> 
+                        <h1>Hello</h1>
+                    </div>
+                </div>
             </div>
         </div>
     )
@@ -67,8 +84,8 @@ export default function UserDocuments(props){
     
         return(
             <div className="dropdown">
-                <DropdownItems><button onClick = {getUserDocuments}>Show Documents</button></DropdownItems>
-                <DropdownItems><button onClick={ShowCreateDocument}>Create Documents</button></DropdownItems>
+                <DropdownItems><button className="showDocument" onClick = {getUserDocuments}>Show Documents</button></DropdownItems>
+                <DropdownItems><button className="showDocument">Create Documents</button></DropdownItems>
             </div>
         )
       }
