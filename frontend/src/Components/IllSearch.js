@@ -16,9 +16,8 @@ const IllSearch = () => {
           symptoms: symptoms,
         },
       });
-      set_bolesti_data(axios_res.data.illnesses);
-      var bolesti_arr = bolesti_data
-        ? bolesti_data.map((bolest) => {
+      var bolesti_arr = axios_res.data.illnesses
+        ? axios_res.data.illnesses.map((bolest) => {
             return (
               <Illnes
                 snimka={bolest.snimka}
@@ -46,12 +45,22 @@ const IllSearch = () => {
           <Navbar />
         </div>
         <div className="backgroundImageContainer">
-          <img className="illSearchImage" src="/Pictures/doctor2.jpg" alt="Doctor"></img>
-          <Illtext/>
+          <img
+            className="illSearchImage"
+            src="/Pictures/doctor2.jpg"
+            alt="Doctor"
+          ></img>
+          <Illtext />
           <div className="componentsBox">
             <label>
-              <input type="text" placeholder="I have..." onChange={handleChange} />
-              <button className="send" onClick={handleSearch}>Search</button>
+              <input
+                type="text"
+                placeholder="I have..."
+                onChange={handleChange}
+              />
+              <button className="send" onClick={handleSearch}>
+                Search
+              </button>
             </label>
           </div>
         </div>
