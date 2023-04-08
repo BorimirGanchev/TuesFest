@@ -1,10 +1,13 @@
-import React,{useState,useEffect} from "react";
+import React,{useState, useContext} from "react";
 import axios from "axios";
 import "../Styles/userDocuments.css"
-import DocumentsNavbar from "./showDocumentsNavbar";
+import "../Styles/showDocumentsNavbar.css"
+import { ChatContext } from "../context/chat-context-firebase";
+import AddDocument from "./AttachFile";
 
 
 export default function UserDocuments(props){
+    const {data} = useContext(ChatContext)
     const [show,setShow] = useState({
         display:"none",
     })
@@ -40,14 +43,54 @@ export default function UserDocuments(props){
    
     return (
         <div className="user-documents-container">
-            <DocumentsNavbar/>
-            <button onClick = {getUserDocuments}>
-                <i class="fa-solid fa-ellipsis"></i>
-            </button>
+            <Navbar>
+                <NavItems>
+                    <DropdownMenu/>
+                </NavItems>
+            </Navbar>
             <div className="douments" style = {show}>
                 <button className="close-user-docs" onClick={closeDocs}>X</button>
                 {UserDocuments}
-                </div>
+            </div>
         </div>
     )
+
+    function DropdownMenu() {
+
+        function DropdownItems(props){
+            return(
+                <div className="menu-item">
+                    {props.children}
+                </div>
+            )
+        }
+    
+        return(
+            <div className="dropdown">
+                <DropdownItems><button onClick = {getUserDocuments}>Show Documents</button></DropdownItems>
+                <DropdownItems><button onClick={ShowCreateDocument}>Create Documents</button></DropdownItems>
+            </div>
+        )
+      }
+
+    function Navbar (props) {
+        return(
+            <nav className="navbar">
+                <ul className="navbar-nav"> { props.children }</ul>
+            </nav>
+        )
+    }
+
+    function NavItems (props) {
+        const[open,setOpen] = useState(false);
+    
+        return(
+            <li className="nav-item">
+                <div className="icon-button" onClick={() =>setOpen(!open)}>
+                    <i class="fa-solid fa-ellipsis"></i>
+                </div>
+                {open && props.children}
+            </li>
+        )
+      }
 }
