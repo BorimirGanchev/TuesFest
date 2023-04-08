@@ -55,7 +55,10 @@ const IllSearch = () => {
             </label>
           </div>
         </div>
-        <div className="bolesti-container">{bolesti_cards}</div>
+        <div className="illBackgroudContainer">
+          <h1>Illnesses</h1>
+          <div className="bolesti-container">{bolesti_cards}</div>
+        </div>
       </div>
     </div>
   );

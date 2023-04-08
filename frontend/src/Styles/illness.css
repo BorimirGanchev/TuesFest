@@ -1,6 +1,6 @@
 .illnesContainer {
   position: absolute;
-  top: 80%;
+  top: 20%;
   left: 0;
   right: 0;
   margin-left: auto;
@@ -36,6 +36,7 @@
   color: #ffffff;
   font-weight: bold;
   width: 60%;
+  margin-top: 5%;
   font-size: larger;
   text-align: center;
 }

@@ -100,6 +100,7 @@ body {
   outline: none;
   color: #ffffff;
   font-size: 20px;
+  padding-left: 1%;
 }
 .input2 .backgroundImageContainer .componentsBox input::-moz-placeholder {
   color: rgb(82, 82, 82);
@@ -107,7 +108,7 @@ body {
 .input2 .backgroundImageContainer .componentsBox input::placeholder {
   color: rgb(82, 82, 82);
 }
-.input2 .backgroundImageContainer .componentsBox button {
+.input2 .backgroundImageContainer .componentsBox .send {
   position: absolute;
   top: 0;
   right: 0;
@@ -120,8 +121,25 @@ body {
   background-color: #8da4f1;
   cursor: pointer;
 }
-.input2 .backgroundImageContainer .componentsBox .send:hover button {
+.input2 .backgroundImageContainer .componentsBox .send:hover {
   background-color: #4f65ac;
+}
+.input2 .illBackgroudContainer {
+  background-color: #7e7e7e;
+  width: 80%;
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  height: 60%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+}
+.input2 .illBackgroudContainer h1 {
+  color: white;
+  text-align: center;
+  font-size: 300%;
 }
 
 @media screen and (max-width: 629px) {
