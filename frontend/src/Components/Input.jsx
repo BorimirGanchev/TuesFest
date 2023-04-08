@@ -26,9 +26,6 @@ const Input = (props) => {
 
   }
   useEffect(() => {
-    console.log("------------------")
-    console.dir(props.magic)
-    console.log("------------------")
     console.dir(data)
     async function fetchData() {
       try {
@@ -96,7 +93,7 @@ const Input = (props) => {
   };
   return (
     <div className="input"> 
-    <AddDocument className = "addDoc" style = {{}} name = {props.magic}/>
+    {/* <AddDocument className = "addDoc" style = {{}} name = {props.magic}/> */}
       <input
         type="text"
         placeholder="Type something..."

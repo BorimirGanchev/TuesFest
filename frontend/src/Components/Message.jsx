@@ -10,8 +10,6 @@ const Message = ({ message }) => {
 
   useEffect(() => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
-    console.log("mess")
-    console.dir(message)
   }, [message]);
 
   return (
