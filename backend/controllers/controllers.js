@@ -75,13 +75,16 @@ const createDoc = async (req, res) => {
 
 const addDocumentToUser = async (req, res) => {
   try {
+    console.dir(req.body.document);
     const newDocument = req.body.document;
-    const name = req.body.name;
+    const name = req.body.document.Name;
+    console.log(newDocument, name);
     const updatedUser = await user.findOneAndUpdate(
       { name: name },
       { $push: { documents: newDocument } },
       { new: true }
     );
+    console.log(updatedUser);
     res.send(updatedUser);
   } catch (error) {
     console.log(error);

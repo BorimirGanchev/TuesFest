@@ -21,7 +21,8 @@ export default function AddDocument(props) {
           }
         : {};
     console.log(documentToBeSend);
-    try{await axios
+    try{
+      await axios
       .post("http://localhost:5000/api/user", {
         name: props.name,
         document: documentToBeSend

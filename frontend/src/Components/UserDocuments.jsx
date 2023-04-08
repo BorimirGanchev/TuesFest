@@ -15,6 +15,7 @@ export default function UserDocuments(props){
         display:"none",
     })
     const [UserDocuments,setUserDocuments] = useState();
+    const [shouldShowForm,setForm] = useState(false)
     const handleButtonClick = async(doc) => {
       setIsDivVisible(true);
       setDataForSelectedDocument(doc)
@@ -28,7 +29,9 @@ export default function UserDocuments(props){
         display: isDivVisible ? 'flex' : 'none',
       };
     
-    
+    function handleShowForm(){
+        setForm(!shouldShowForm)
+    }
     const getUserDocuments = async() => {
             try{
                 let userDocuments = await axios.get("http://localhost:5000/api/users",{
@@ -74,7 +77,7 @@ export default function UserDocuments(props){
                 <div className="documentsContainer">
                     <div className="eachDocument">{UserDocuments}</div>
                     <div className="moreDataContainer" style={divStyle}> 
-                        {dataForSelectedDocument ? (dataForSelectedDocument.Type === "Belezhka" ? <Belezhka type = {dataForSelectedDocument.Type} name = {dataForSelectedDocument.Name} age = {dataForSelectedDocument.Age} address = {dataForSelectedDocument.Address} diagnosis = {dataForSelectedDocument.Diagnosis}/> : "") : ""}
+                        {dataForSelectedDocument ? (dataForSelectedDocument.Type === "belezhka" ? <Belezhka type = {dataForSelectedDocument.Type} name = {dataForSelectedDocument.Name} age = {dataForSelectedDocument.Age} address = {dataForSelectedDocument.Address} diagnosis = {dataForSelectedDocument.Diagnosis}/> : "") : ""}
                     </div>
                 </div>
             </div>
@@ -92,8 +95,8 @@ export default function UserDocuments(props){
         return(
             <div className="dropdown">
                 <DropdownItems><button className="showDocument" onClick = {getUserDocuments}>Show Documents</button></DropdownItems>
-                <DropdownItems><button className="showDocument">Create Documents</button></DropdownItems>{/*TODO */}
-                <AddDocument className = "addDocument"/>
+                <DropdownItems><button className="showDocument" onClick = {handleShowForm}>Create Documents</button></DropdownItems>{/*TODO */}
+                <AddDocument style = {{display: "none"}}/>
             </div>
         )
     }
