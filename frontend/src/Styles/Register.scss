@@ -36,7 +36,20 @@
         width: 250px;
         border-bottom: 1px solid #a7bcff;
         &::placeholder {
-          color: rgb(124, 124, 124);
+          color: rgb(70, 70, 70);
+        }
+      }
+      .checkboxText{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        input{
+          flex: 2;
+        }
+        span{
+          flex: 1;
+          color: #678aff;
+          transform: translateX(-90%);
         }
       }
 
@@ -50,7 +63,7 @@
       }
       
       button:hover{
-        background-color: #012085;
+        background-color: #183594;
       }
 
       label {

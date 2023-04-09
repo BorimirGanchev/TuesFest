@@ -35,10 +35,23 @@
   border-bottom: 1px solid #a7bcff;
 }
 .formContainer .formWrapper form input::-moz-placeholder {
-  color: rgb(124, 124, 124);
+  color: rgb(70, 70, 70);
 }
 .formContainer .formWrapper form input::placeholder {
-  color: rgb(124, 124, 124);
+  color: rgb(70, 70, 70);
+}
+.formContainer .formWrapper form .checkboxText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.formContainer .formWrapper form .checkboxText input {
+  flex: 2;
+}
+.formContainer .formWrapper form .checkboxText span {
+  flex: 1;
+  color: #678aff;
+  transform: translateX(-90%);
 }
 .formContainer .formWrapper form button {
   background-color: #7b96ec;
@@ -49,7 +62,7 @@
   cursor: pointer;
 }
 .formContainer .formWrapper form button:hover {
-  background-color: #012085;
+  background-color: #183594;
 }
 .formContainer .formWrapper form label {
   display: flex;

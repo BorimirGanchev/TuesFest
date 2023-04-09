@@ -101,7 +101,7 @@ const Register = () => {
     return (
         <div className="formContainer">
         <div className="formWrapper">
-            <span className="logo">Doc Chat</span>
+            <span className="logo">Doc Help</span>
             <span className="title">Register</span>
             <form onSubmit = {handle_submit}>
             <input required type="text" placeholder="display name" />
@@ -112,7 +112,10 @@ const Register = () => {
                 <img src={avatar} alt="" />
                 <span>Add an avatar</span>
             </label>
-            <input type="checkbox" placeholder = "i am a doctor" checked={checked} onChange={changeCheck}/>
+            <div className="checkboxText">
+              <input type="checkbox" checked={checked} onChange={changeCheck}/>
+              <span>I am a Doctor</span>
+            </div>
             {err && <span>error in creating user</span>}
             <button>Sign up</button>
             </form>

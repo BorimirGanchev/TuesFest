@@ -21,7 +21,7 @@ function Login() {
     return (
         <div className="formContainer">
         <div className="formWrapper">
-            <span className="logo">Doc Chat</span>
+            <span className="logo">Doc Help</span>
             <span className="title">Log in</span>
             <form onSubmit={handle_submit}>
             <input required type="email" placeholder="email" />
