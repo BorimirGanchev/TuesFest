@@ -23,7 +23,7 @@ const IllSearch = () => {
               <Illnes
                 snimka={bolest.snimka}
                 name={bolest.description}
-                description={bolest.symptoms}
+                description={bolest.text}
                 lechenie={bolest.lechenie}
               />
             );

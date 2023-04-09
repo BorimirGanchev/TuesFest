@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "../Styles/AttachFile.css"
 import { ChatContext } from "../context/chat-context-firebase";
 export default function AddDocument(props) {
   const [formData, setFormData] = React.useState({
@@ -39,18 +40,18 @@ export default function AddDocument(props) {
     console.log(formData);
   }
   return (
-    <div className="">
+    <div className="documentsHolder">
       <fieldset>
         <legend>TYPE</legend>
         <input
           type="radio"
-          id="belezhka"
+          id="medical note"
           name="type"
           value="belezhka"
           checked={formData.type === "belezhka"}
           onChange={handleChange}
         />
-        <label htmlFor="belezhka">belezhka</label>
+        <label htmlFor="belezhka">Мedical note</label>
         <br />
 
         <input
@@ -61,11 +62,12 @@ export default function AddDocument(props) {
           checked={formData.type === "napravlenie"}
           onChange={handleChange}
         />
-        <label htmlFor="napravlenie">napravlenie</label>
+        <label htmlFor="napravlenie">Direction</label>
         <br />
-      </fieldset><button onClick={handleSubmit}>Submit</button>
+      </fieldset>
       {formData.type === "belezhka" ? (
         <>
+          <button className="submitDocument" onClick={handleSubmit}>Submit</button>
           <input
             type="text"
             placeholder="Name"
@@ -86,6 +88,13 @@ export default function AddDocument(props) {
             onChange={handleChange}
             name="Address"
             value={formData.Address}
+          />
+          <input
+          type="text"
+          placeholder="EGN"
+          onChange={handleChange}
+          name="EGN"
+          value={formData.EGN}
           />
           <input
             type="text"
@@ -109,15 +118,7 @@ export default function AddDocument(props) {
             value={formData.Doctor}
           />
         </>
-      ) : (
-        <input
-          type="text"
-          placeholder="EGN"
-          onChange={handleChange}
-          name="EGN"
-          value={formData.EGN}
-        />
-      )}
+      ) : ""}  
       
     </div>
   );

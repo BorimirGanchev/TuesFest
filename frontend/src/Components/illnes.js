@@ -14,9 +14,11 @@ function Illnes(props) {
         <img src={props.snimka} alt="img" className="illImage" />
       </div>
       <div className="illnessDecription">
+        <h3>Description</h3>
         <p>{props.description}</p>
       </div>
       <div className="illnessTreatment">
+        <h3>Treatment</h3>
         <p>{props.lechenie}</p>
       </div>
     </div>

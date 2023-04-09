@@ -1,0 +1,20 @@
+.documentsHolder button {
+  color: white;
+  background-color: #8da4f1;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+.documentsHolder button:hover {
+  background-color: #4f65ac;
+}
+.documentsHolder input {
+  background-color: rgb(180, 180, 180);
+  border: 2px solid white;
+  border-radius: 10px;
+  margin-top: 1%;
+}
+.documentsHolder .submitDocument {
+  position: absolute;
+  left: 75%;
+  top: 55%;
+}/*# sourceMappingURL=AttachFile.css.map */

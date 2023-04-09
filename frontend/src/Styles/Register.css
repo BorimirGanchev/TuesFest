@@ -251,10 +251,10 @@
   font-size: 18px;
 }
 .home .container .chat .input input::-moz-placeholder {
-  color: lightgray;
+  color: rgb(102, 102, 102);
 }
 .home .container .chat .input input::placeholder {
-  color: lightgray;
+  color: rgb(102, 102, 102);
 }
 .home .container .chat .input .send {
   display: flex;
@@ -262,8 +262,11 @@
   gap: 10px;
 }
 .home .container .chat .input .send img {
-  height: 24px;
+  height: 26px;
   cursor: pointer;
+}
+.home .container .chat .input .send img:hover {
+  filter: brightness(0.7);
 }
 .home .container .chat .input .send button {
   border: none;

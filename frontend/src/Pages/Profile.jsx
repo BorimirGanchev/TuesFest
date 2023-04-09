@@ -53,7 +53,6 @@ const Profile = () => {
                             <div className="description">
                             <span>Description: {doctorDescriptionStatic}</span>
                         </div>}
-                        <UserDocuments name = {currentUser.displayName}/>
                     </div>
                 </div>
             </div>

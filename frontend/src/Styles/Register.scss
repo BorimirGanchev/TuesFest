@@ -275,7 +275,7 @@
           font-size: 18px;
 
           &::placeholder {
-            color: lightgray;
+            color: rgb(102, 102, 102);
           }
         }
 
@@ -285,8 +285,11 @@
           gap: 10px;
 
           img {
-            height: 24px;
+            height: 26px;
             cursor: pointer;
+          }
+          img:hover{
+            filter: brightness(0.7);
           }
 
           button {

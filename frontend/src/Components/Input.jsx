@@ -112,7 +112,6 @@ const Input = (props) => {
           <img src={Img} alt="" />
         </label>
         <button onClick={handleSend} className = "send-message">Send</button>
-        {isDoc && <button onClick = {attachFileToCurrentPatient}>Attach document</button>}
        
       </div>
     </div>

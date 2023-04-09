@@ -66,11 +66,11 @@ export default function UserDocuments(props){
           }, [dataForSelectedDocument]);
     return (
         <div className="user-documents-container">
-            <Navbar>
+            <NavbarDocuments>
                 <NavItems>
                     <DropdownMenu/>
                 </NavItems>
-            </Navbar>
+            </NavbarDocuments>
             <div className="documents" style = {show}>
                 <h1 className="yourDocumentsTitle">{data.user?.displayName} documents</h1>
                 <button className="close-user-docs" onClick={closeDocs}><i class="fa-sharp fa-solid fa-circle-xmark"></i></button>
@@ -100,7 +100,7 @@ export default function UserDocuments(props){
             </div>
         )
     }
-    function Navbar (props) {
+    function NavbarDocuments (props) {
         return(
             <nav className="navbar">
                 <ul className="navbar-nav"> { props.children }</ul>
