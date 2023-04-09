@@ -46,12 +46,22 @@ const IllSearch = () => {
           <Navbar />
         </div>
         <div className="backgroundImageContainer">
-          <img className="illSearchImage" src="/Pictures/doctor2.jpg" alt="Doctor"></img>
-          <Illtext/>
+          <img
+            className="illSearchImage"
+            src="/Pictures/doctor2.jpg"
+            alt="Doctor"
+          ></img>
+          <Illtext />
           <div className="componentsBox">
             <label>
-              <input type="text" placeholder="I have..." onChange={handleChange} />
-              <button className="send" onClick={handleSearch}>Search</button>
+              <input
+                type="text"
+                placeholder="I have..."
+                onChange={handleChange}
+              />
+              <button className="send" onClick={handleSearch}>
+                Search
+              </button>
             </label>
           </div>
         </div>
