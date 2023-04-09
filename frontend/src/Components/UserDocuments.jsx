@@ -95,8 +95,8 @@ export default function UserDocuments(props){
         return(
             <div className="dropdown">
                 <DropdownItems><button className="showDocument" onClick = {getUserDocuments}>Show Documents</button></DropdownItems>
-                <DropdownItems><button className="showDocument" onClick = {handleShowForm}>Create Documents</button></DropdownItems>{/*TODO */}
-                <AddDocument style = {{display: "none"}}/>
+                <DropdownItems><button className="showDocument" onClick = {handleShowForm}>Create Documents</button></DropdownItems>TODO
+                <AddDocument  style = {{display: "none"}}/>
             </div>
         )
     }
