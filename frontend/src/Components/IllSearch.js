@@ -16,19 +16,20 @@ const IllSearch = () => {
           symptoms: symptoms,
         },
       });
-      set_bolesti_data(axios_res.data.illnesses);
-      var bolesti_arr = bolesti_data
-        ? bolesti_data.map((bolest) => {
+      var bolesti_arr = axios_res.data.illnesses
+        ? axios_res.data.illnesses.map((bolest, index) => {
             return (
               <Illnes
                 snimka={bolest.snimka}
                 name={bolest.description}
                 description={bolest.text}
                 lechenie={bolest.lechenie}
+                key={index}
               />
             );
           })
         : "click again";
+      console.log(bolesti_arr);
       set_bolesti_cards(bolesti_arr);
     } catch (err) {
       console.log(err);
