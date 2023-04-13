@@ -21,7 +21,7 @@ function Illnes(props) {
         <p>{props.lechenie}</p>
       </div>
       <div className="illnessSpecialist">
-        <h3>Specialist: <p></p></h3>
+        <h3>Specialist: <span>{props.specialist}</span></h3>
       </div>
     </div>
   );

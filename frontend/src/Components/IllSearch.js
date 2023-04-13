@@ -24,6 +24,7 @@ const IllSearch = () => {
                 name={bolest.description}
                 description={bolest.text}
                 lechenie={bolest.lechenie}
+                specialist={bolest.specialist}
                 key={index}
               />
             );
