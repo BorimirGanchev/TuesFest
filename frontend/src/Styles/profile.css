@@ -55,11 +55,11 @@
   font-size: 20px;
   grid-area: footer;
   display: flex;
-  margin-top: 5%;
+  overflow: auto;
   flex-direction: column;
 }
 .page .box .footer .email {
-  margin-top: 2%;
+  margin-top: 5%;
   background-color: #222;
   border: 10px solid #222;
   border-radius: 10px;

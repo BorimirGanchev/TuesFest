@@ -21,30 +21,30 @@ function Navbar() {
       <ul className={clickState ? "nav-menu active" : "nav-menu"}>
         <li>
           <p className="nav-links">
-            <i className="fa-solid fa-house-user"></i>
             <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+              <i className="fa-solid fa-house-user"></i>
               Home
             </Link>
           </p>
         </li>
         <li>
           <p className="nav-links">
-            <i className="fa-sharp fa-solid fa-magnifying-glass"></i>
             <Link
               to="http://localhost:3000/illsearch"
               style={{ textDecoration: "none", color: "white" }}
             >
+              <i className="fa-sharp fa-solid fa-magnifying-glass"></i>
               Search Engine
             </Link>
           </p>
         </li>
         <li>
           <p className="nav-links">
-            <i className="fa-solid fa-comments"></i>
             <Link
               to="http://localhost:3000/chats"
               style={{ textDecoration: "none", color: "white" }}
             >
+              <i className="fa-solid fa-comments"></i>
               Chat
             </Link>
           </p>
@@ -53,7 +53,7 @@ function Navbar() {
           <p className="nav-links-mobile">
             <Link
               to="http://localhost:3000/profile"
-              style={{ textDecoration: "none", color: "black" }}
+              style={{ textDecoration: "none", color: "black", display: "flex", justifyContent: "center", alignItems: "center" }}
             >
               <img
                 src={currentUser.photoURL}
@@ -61,8 +61,8 @@ function Navbar() {
                 className="pfp"
                 style={{ width: "2rem", height: "2rem", borderRadius: "50%" }}
               />
+              Profile
             </Link>
-            Profile
           </p>
         </li>
       </ul>

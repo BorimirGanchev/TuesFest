@@ -1,12 +1,11 @@
 import React from "react";
-import "../Styles/illness.css";
 import { AuthContext } from "../context/auth-context-firebase-trash";
 import { useContext } from "react";
 
 function Illnes(props) {
   const { currentUser } = useContext(AuthContext);
   return (
-    <div className="illnesContainer" style={{ marginTop: "10vh" }}>
+    <div className="illnesContainer">
       <div className="illnessName">
         <p>{props.name}</p>
       </div>
@@ -20,6 +19,9 @@ function Illnes(props) {
       <div className="illnessTreatment">
         <h3>Treatment</h3>
         <p>{props.lechenie}</p>
+      </div>
+      <div className="illnessSpecialist">
+        <h3>Specialist: <p></p></h3>
       </div>
     </div>
   );
