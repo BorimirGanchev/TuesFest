@@ -6,7 +6,7 @@ import { useContext } from "react";
 function Illnes(props) {
   const { currentUser } = useContext(AuthContext);
   return (
-    <div className="illnesContainer">
+    <div className="illnesContainer" style={{ marginTop: "10vh" }}>
       <div className="illnessName">
         <p>{props.name}</p>
       </div>
