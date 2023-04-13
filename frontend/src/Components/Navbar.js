@@ -1,5 +1,6 @@
 import "./NavbarStyle.css";
 import { Link } from "react-router-dom";
+import Logo from "../Pictures2/logo.png";
 import { useContext, useState } from "react";
 import { AuthContext } from "../context/auth-context-firebase-trash";
 import React from "react";
@@ -14,7 +15,7 @@ function Navbar() {
   
   return (
     <nav className="NavbarItems">
-      <h1 className="logo">DocHelp</h1>
+      <h1 className="logo"><img src={Logo} alt="Logo" className="logoImage"/>DocHelp</h1>
       <div className="menu-icons" onClick={handleClick}>
         <i className={clickState ? "fas fa-times" : "fas fa-bars"}></i>
       </div>
