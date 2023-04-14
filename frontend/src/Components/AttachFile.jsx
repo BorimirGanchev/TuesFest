@@ -18,7 +18,8 @@ export default function AddDocument(props) {
             Address: formData.Address,
             Diagnosis: formData.Diagnosis,
             Lechenie: formData.Lechenie,
-            Type:formData.type
+            Type:formData.type,
+            EGN:formData.EGN
           }
         : {};
     console.log(documentToBeSend);
