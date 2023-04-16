@@ -18,9 +18,6 @@ const IllSearch = () => {
       });
       var bolesti_arr = axios_res.data.matchedIllnesses
         ? axios_res.data.matchedIllnesses.map((bolest, index) => {
-          console.log("aaaaaaaaaa")
-          console.log(bolest);
-          console.log("aaaaaaaaaa")
             return (
               <Illnes
                 snimka={bolest.snimka}

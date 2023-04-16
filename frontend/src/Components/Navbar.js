@@ -35,7 +35,7 @@ function Navbar() {
               style={{ textDecoration: "none", color: "white" }}
             >
               <i className="fa-sharp fa-solid fa-magnifying-glass"></i>
-              Search Engine
+              Doc Search
             </Link>
           </p>
         </li>
@@ -46,7 +46,7 @@ function Navbar() {
               style={{ textDecoration: "none", color: "white" }}
             >
               <i className="fa-solid fa-comments"></i>
-              Chat
+              Doc Chat
             </Link>
           </p>
         </li>

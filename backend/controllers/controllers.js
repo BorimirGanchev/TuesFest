@@ -25,7 +25,7 @@ const getIllnes = async (req, res) => {
       const percentageMatch = calculatePercentageMatch(illness.symptoms, nouns);
       return { ...illness.toObject(), percentageMatch };
     });
-    console.dir(matchedIllnesses)
+    matchedIllnesses.sort((a, b) => b.percentageMatch - a.percentageMatch);
     res.status(200).json({ 
       illnesses: illnesses,
       matchedIllnesses: matchedIllnesses
