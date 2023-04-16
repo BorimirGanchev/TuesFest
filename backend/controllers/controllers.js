@@ -21,11 +21,23 @@ const getIllnes = async (req, res) => {
   console.log(nouns);
   try {
     const illnesses = await illness.find({ symptoms: { $in: nouns } });
-    res.status(200).json({ illnesses });
+    const matchedIllnesses = illnesses.map((illness) => {
+      const percentageMatch = calculatePercentageMatch(illness.symptoms, nouns);
+      return { ...illness.toObject(), percentageMatch };
+    });
+    console.dir(matchedIllnesses)
+    res.status(200).json({ 
+      illnesses: illnesses,
+      matchedIllnesses: matchedIllnesses
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
+};
+const calculatePercentageMatch = (symptomsInDb, userSymptoms) => {
+  const matchedSymptoms = symptomsInDb.filter((symptom) => userSymptoms.includes(symptom));
+  return (matchedSymptoms.length / symptomsInDb.length) * 100;
 };
 
 const createIllness = async (req, res) => {

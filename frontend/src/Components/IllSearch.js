@@ -16,8 +16,11 @@ const IllSearch = () => {
           symptoms: symptoms,
         },
       });
-      var bolesti_arr = axios_res.data.illnesses
-        ? axios_res.data.illnesses.map((bolest, index) => {
+      var bolesti_arr = axios_res.data.matchedIllnesses
+        ? axios_res.data.matchedIllnesses.map((bolest, index) => {
+          console.log("aaaaaaaaaa")
+          console.log(bolest);
+          console.log("aaaaaaaaaa")
             return (
               <Illnes
                 snimka={bolest.snimka}
@@ -25,11 +28,13 @@ const IllSearch = () => {
                 description={bolest.text}
                 lechenie={bolest.lechenie}
                 specialist={bolest.specialist}
+                matchPercentage={bolest.percentageMatch}
                 key={index}
               />
             );
           })
         : "click again";
+      
       console.log(bolesti_arr);
       set_bolesti_cards(bolesti_arr);
     } catch (err) {

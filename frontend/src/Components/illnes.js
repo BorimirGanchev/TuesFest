@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { AuthContext } from "../context/auth-context-firebase-trash";
 import { useContext } from "react";
 
 function Illnes(props) {
   const { currentUser } = useContext(AuthContext);
+  const getColor = () =>{
+    if(props.matchPercentage < 40){
+      return "#ff0000";
+    }else if (props.matchPercentage < 70){
+      return "#ffa500";
+    }else{
+      return "#2ecc71";
+    }
+  }
   return (
     <div className="illnesContainer">
       <div className="illnessName">
@@ -22,6 +31,13 @@ function Illnes(props) {
       </div>
       <div className="illnessSpecialist">
         <h3>Specialist: <span>{props.specialist}</span></h3>
+      </div>
+      <div className="percentageContainer">
+        <div className="progress-bar">
+          <div className="progress-bar-fill" style={{ width : `${props.matchPercentage}%`, backgroundColor: getColor()}}>
+            <div className="progress-lable">{props.matchPercentage}%</div>
+          </div>
+        </div>
       </div>
     </div>
   );
