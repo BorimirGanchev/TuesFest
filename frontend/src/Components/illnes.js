@@ -5,10 +5,14 @@ import { useContext } from "react";
 function Illnes(props) {
   const { currentUser } = useContext(AuthContext);
   const getColor = () =>{
-    if(props.matchPercentage < 40){
+    if(props.matchPercentage <= 10){
       return "#ff0000";
-    }else if (props.matchPercentage < 70){
-      return "#ffa500";
+    }else if (props.matchPercentage <= 30){
+      return "#ff4d00";
+    }else if (props.matchPercentage <= 50){
+      return "#ff7400";
+    }else if (props.matchPercentage <= 70){
+      return "#ff9a00";
     }else{
       return "#2ecc71";
     }
