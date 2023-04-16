@@ -216,11 +216,23 @@ body {
   font-weight: bold;
   width: 60%;
   margin-bottom: 4%;
-  font-size: larger;
+  font-size: 130%;
   text-align: center;
 }
 .input2 .illBackgroudContainer .percentageContainer {
-  width: 65%;
+  background-color: #444;
+  border-radius: 10px;
+  margin-top: 3%;
+  color: #ffffff;
+  padding: 15px 15px 15px;
+  font-weight: bold;
+  width: 60%;
+  margin-bottom: 4%;
+  font-size: 130%;
+  text-align: center;
+}
+.input2 .illBackgroudContainer .percentageContainer .PercantageTitle {
+  display: flex;
 }
 .input2 .illBackgroudContainer .percentageContainer .progress-bar {
   width: 100%;

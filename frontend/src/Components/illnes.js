@@ -33,6 +33,7 @@ function Illnes(props) {
         <h3>Specialist: <span>{props.specialist}</span></h3>
       </div>
       <div className="percentageContainer">
+        <h3 className="PercantageTitle">Chances of having this illness:</h3>
         <div className="progress-bar">
           <div className="progress-bar-fill" style={{ width : `${props.matchPercentage}%`, backgroundColor: getColor()}}>
             <div className="progress-lable">{props.matchPercentage}%</div>

@@ -37,7 +37,7 @@ const getIllnes = async (req, res) => {
 };
 const calculatePercentageMatch = (symptomsInDb, userSymptoms) => {
   const matchedSymptoms = symptomsInDb.filter((symptom) => userSymptoms.includes(symptom));
-  return (matchedSymptoms.length / symptomsInDb.length) * 100;
+  return Math.round((matchedSymptoms.length / symptomsInDb.length) * 100);
 };
 
 const createIllness = async (req, res) => {
