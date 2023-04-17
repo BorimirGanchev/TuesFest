@@ -129,7 +129,7 @@ body{
     position: absolute;
     top: 115%;
     left: 50%;
-    height: 80%;
+    height: 100%;
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
@@ -139,7 +139,7 @@ body{
     h1{
       color: white;
       text-align: center;
-      font-size: 300%;
+      font-size: 350%;
     }
     .illnesContainer{
       position: block;
