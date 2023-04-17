@@ -82,6 +82,16 @@ const Register = () => {
 
             //create empty user chats on firestore
             await setDoc(doc(db, "userChats", res.user.uid), {});
+            //creating user in mongoDB
+            try{
+              const mongo_res = await axios.post("http://localhost:5000/api/users",{
+                name:displayName,
+                documents:[]
+              })
+            }catch(err){
+              console.log(err);
+              console.log("mongo fail")
+            }
             navigate("/");
           } catch (err) {
             console.log(err);

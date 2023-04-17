@@ -24,11 +24,16 @@ export default function AddDocument(props) {
         : {};
     console.log(documentToBeSend);
     try{
-      await axios
+      const axios_res = await axios
       .post("http://localhost:5000/api/user", {
         name: props.name,
         document: documentToBeSend
-      })}catch(err){console.log(err)}
+      })
+      console.log("add document response")
+      console.log(axios_res)
+    }catch(err){
+      console.log(err)
+    }
   }
   function handleChange(event) {
     const { name, value, type, checked } = event.target;

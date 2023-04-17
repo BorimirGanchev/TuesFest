@@ -26,9 +26,9 @@ const getIllnes = async (req, res) => {
       return { ...illness.toObject(), percentageMatch };
     });
     matchedIllnesses.sort((a, b) => b.percentageMatch - a.percentageMatch);
-    res.status(200).json({ 
+    res.status(200).json({
       illnesses: illnesses,
-      matchedIllnesses: matchedIllnesses
+      matchedIllnesses: matchedIllnesses,
     });
   } catch (err) {
     console.log(err);
@@ -36,7 +36,9 @@ const getIllnes = async (req, res) => {
   }
 };
 const calculatePercentageMatch = (symptomsInDb, userSymptoms) => {
-  const matchedSymptoms = symptomsInDb.filter((symptom) => userSymptoms.includes(symptom));
+  const matchedSymptoms = symptomsInDb.filter((symptom) =>
+    userSymptoms.includes(symptom)
+  );
   return Math.round((matchedSymptoms.length / symptomsInDb.length) * 100);
 };
 
@@ -96,6 +98,7 @@ const addDocumentToUser = async (req, res) => {
       { $push: { documents: newDocument } },
       { new: true }
     );
+    console.log("update");
     console.log(updatedUser);
     res.send(updatedUser);
   } catch (error) {

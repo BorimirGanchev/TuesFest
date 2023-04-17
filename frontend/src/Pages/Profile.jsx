@@ -2,12 +2,10 @@ import React, { useEffect } from "react";
 import "../Styles/profile.css"
 import { AuthContext } from '../context/auth-context-firebase-trash'
 import { useContext } from "react";
-import { ChatContext } from "../context/chat-context-firebase";
 import axios from "axios";
 import UserDocumentsProfile from "../Components/UserDocumentsProfile";
 import Navbar from "../Components/Navbar";
 const Profile = () => {
-    const { data } = useContext(ChatContext);
     const [isDoc,validateDoc] = React.useState(false)
     const doctorDescriptionStatic = "I graduated from the Medical University in Sofia, Bulgaria. I have 2 years of experience at Pirogov Hospital."
     const {currentUser} = useContext(AuthContext)
@@ -55,7 +53,7 @@ const Profile = () => {
                             <div className="description">
                             <span>Description: {doctorDescriptionStatic}</span>
                         </div>}
-                        {!isDoc && <UserDocumentsProfile name = {currentUser ?.displayName} displayName={currentUser.displayName}/>}
+                        {!isDoc && <UserDocumentsProfile name = {currentUser?.displayName} displayName={currentUser.displayName}/>}
                     </div>
                 </div>
             </div>
