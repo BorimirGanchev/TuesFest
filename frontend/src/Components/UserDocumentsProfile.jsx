@@ -14,7 +14,6 @@ export default function UserDocuments(props){
         display:"none",
     })
     const [UserDocuments,setUserDocuments] = useState();
-    const [shouldShowForm,setForm] = useState(false)
     const handleButtonClick = async(doc) => {
       setIsDivVisible(true);
       setDataForSelectedDocument(doc)
@@ -28,9 +27,7 @@ export default function UserDocuments(props){
         display: isDivVisible ? 'flex' : 'none',
       };
     
-    function handleShowForm(){
-        setForm(!shouldShowForm)
-    }
+
     const getUserDocuments = async() => {
             try{
                 let userDocuments = await axios.get("http://localhost:5000/api/users",{
