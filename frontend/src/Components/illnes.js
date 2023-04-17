@@ -9,10 +9,12 @@ function Illnes(props) {
       return "#ff0000";
     }else if (props.matchPercentage <= 30){
       return "#ff4d00";
-    }else if (props.matchPercentage <= 50){
+    }else if (props.matchPercentage <= 40){
       return "#ff7400";
-    }else if (props.matchPercentage <= 70){
+    }else if (props.matchPercentage <= 50){
       return "#ff9a00";
+    }else if (props.matchPercentage <= 75){
+      return "#f1d141";
     }else{
       return "#2ecc71";
     }
