@@ -62,6 +62,11 @@ const IllSearch = () => {
                 type="text"
                 placeholder="I have..."
                 onChange={handleChange}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    handleSearch();
+                  }
+                }}
               />
               <button className="send" onClick={handleSearch}>
                 Search

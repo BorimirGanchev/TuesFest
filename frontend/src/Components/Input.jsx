@@ -99,6 +99,11 @@ const Input = (props) => {
         placeholder="Type something..."
         onChange={(e) => setText(e.target.value)}
         value={text}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            handleSend();
+          }
+        }}
       />
       <div className="send">
         <img src={Attach} alt="" />
