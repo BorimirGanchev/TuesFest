@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useRef } from "react";
 import axios from "axios";
 import "../Styles/AttachFile.css"
 import { ChatContext } from "../context/chat-context-firebase";
 export default function AddDocument(props) {
+
   const [formData, setFormData] = React.useState({
     Name: "",
     type: "",
@@ -37,6 +38,11 @@ export default function AddDocument(props) {
       setTimeout(() => {
         setShowDocumentAdded(false);
       }, 3000);
+      setFormData({ // clear form data after submitting
+        Name: "",
+        type: "",
+        city: ""
+      });
     }catch(err){
       console.log(err)
     }
