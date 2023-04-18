@@ -19,4 +19,16 @@
         left: 75%;
         top: 55%
     }
+    .showIfDocumendIsMade{
+        background-color: #222;
+        position: absolute;
+        color: white;
+        padding: 10px 10px 10px;
+        top: 50%;
+        left: 10%;
+        width: 50%;
+    }
+    .hideIfDocumentIsNotMade{
+        display: none;
+    }
 }

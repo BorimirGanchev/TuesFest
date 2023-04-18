@@ -8,8 +8,9 @@ export default function AddDocument(props) {
     type: "",
     city: ""
   });
+  const [showDocumentAdded, setShowDocumentAdded] = React.useState(false);
+
   async function handleSubmit() {
-    console.log("--------------");
     let documentToBeSend =
       formData.type === "belezhka"
         ? {
@@ -32,6 +33,10 @@ export default function AddDocument(props) {
       })
       console.log("add document response")
       console.log(axios_res)
+      setShowDocumentAdded(true);
+      setTimeout(() => {
+        setShowDocumentAdded(false);
+      }, 3000);
     }catch(err){
       console.log(err)
     }
@@ -48,6 +53,11 @@ export default function AddDocument(props) {
   }
   return (
     <div className="documentsHolder">
+      
+      <div className={showDocumentAdded ? "showIfDocumendIsMade" : "hideIfDocumentIsNotMade"}>
+        <span>Document added successfully!</span>
+      </div>
+
       <fieldset>
         <legend>TYPE</legend>
         <input
@@ -75,6 +85,7 @@ export default function AddDocument(props) {
       {formData.type === "belezhka" ? (
         <>
           <button className="submitDocument" onClick={handleSubmit}>Submit</button>
+
           <input
             type="text"
             placeholder="Name"

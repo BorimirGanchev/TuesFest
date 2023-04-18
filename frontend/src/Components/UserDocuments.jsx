@@ -72,7 +72,7 @@ export default function UserDocuments(props){
                 </NavItems>
             </NavbarDocuments>
             <div className="documents" style = {show}>
-                <h1 className="yourDocumentsTitle">{data.user?.displayName} documents</h1>
+                <h1 className="yourDocumentsTitle">{data.user?.displayName}'s documents</h1>
                 <button className="close-user-docs" onClick={closeDocs}><i class="fa-sharp fa-solid fa-circle-xmark"></i></button>
                 <div className="documentsContainer">
                     <div className="eachDocument">{UserDocuments}</div>
