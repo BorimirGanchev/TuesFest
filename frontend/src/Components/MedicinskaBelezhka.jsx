@@ -10,6 +10,7 @@ export default function Belezhka(props){
             <p>Address : {props.address}</p>
             <p>Diagnosis : {props.diagnosis}</p>
             <p>Treatment : {props.lechenie}</p>
+            <p>Doctor : {props.doctor}</p>
         </div>
     )
 }

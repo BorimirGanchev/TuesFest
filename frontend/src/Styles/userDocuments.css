@@ -84,7 +84,7 @@
   border-radius: 10px;
 }
 .user-documents-container .documents .documentsContainer .moreDataContainer .belezhka-container {
-  padding-top: 10%;
+  padding-top: 25%;
   overflow: auto;
   display: flex;
   flex-direction: column;
@@ -101,5 +101,5 @@
   background-color: #444444;
   border-radius: 10px;
   width: 80%;
-  height: 15%;
+  padding: 10px 10px 10px;
 }/*# sourceMappingURL=userDocuments.css.map */

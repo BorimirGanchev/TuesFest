@@ -19,7 +19,8 @@ export default function AddDocument(props) {
             Diagnosis: formData.Diagnosis,
             Lechenie: formData.Lechenie,
             Type:formData.type,
-            EGN:formData.EGN
+            EGN:formData.EGN,
+            Doctor: formData.Doctor
           }
         : {};
     console.log(documentToBeSend);
