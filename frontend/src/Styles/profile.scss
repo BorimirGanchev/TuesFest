@@ -20,6 +20,7 @@
         grid-template-areas: 
             "header header header"
             "menu main main"
+            "footer footer footer"
             "footer footer footer";
 
         .titleName {
@@ -67,7 +68,6 @@
             flex-direction: column;
 
             .email{
-                margin-top: 5%;
                 background-color: #222;
                 border: 10px solid #222;
                 border-radius: 10px;

@@ -27,6 +27,11 @@ const Profile = () => {
         console.log(currentUser.isDoc);
         findDoc()
     })
+    const getMargin = () =>{
+        if(isDoc == false){
+            return "20%"
+        }
+    }
         return(
             <div className="page">
                <Navbar/>
@@ -42,7 +47,7 @@ const Profile = () => {
                             <span>Name: {currentUser.displayName}</span>
                         </div>
                     </div>
-                    <div className="footer">
+                    <div className="footer" style={{marginBottom: getMargin()}}>
                         <div className="email">
                             <span>Email: {currentUser.email}</span>
                         </div>

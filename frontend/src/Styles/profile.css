@@ -17,7 +17,7 @@
   grid-gap: 10px 10px;
   grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
   grid-template-rows: 90px 100px 150px;
-  grid-template-areas: "header header header" "menu main main" "footer footer footer";
+  grid-template-areas: "header header header" "menu main main" "footer footer footer" "footer footer footer";
 }
 .page .box .titleName {
   color: #fff;
@@ -59,7 +59,6 @@
   flex-direction: column;
 }
 .page .box .footer .email {
-  margin-top: 5%;
   background-color: #222;
   border: 10px solid #222;
   border-radius: 10px;
