@@ -84,6 +84,8 @@
                 background-color: #5d5b8d;
                 border-radius: 10px;
                 .belezhka-container{
+                    padding-top: 10%;
+                    overflow: auto;
                     display: flex;
                     flex-direction: column;
                     align-items: center;

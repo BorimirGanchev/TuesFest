@@ -77,7 +77,7 @@ export default function UserDocuments(props){
                 <div className="documentsContainer">
                     <div className="eachDocument">{UserDocuments}</div>
                     <div className="moreDataContainer" style={divStyle}> 
-                        {dataForSelectedDocument ? (dataForSelectedDocument.Type === "belezhka" ? <Belezhka type = {dataForSelectedDocument.Type} name = {dataForSelectedDocument.Name} age = {dataForSelectedDocument.Age} address = {dataForSelectedDocument.Address} diagnosis = {dataForSelectedDocument.Diagnosis}/> : "") : ""}
+                        {dataForSelectedDocument ? (dataForSelectedDocument.Type === "belezhka" ? <Belezhka type = {dataForSelectedDocument.Type} name = {dataForSelectedDocument.Name} age = {dataForSelectedDocument.Age} address = {dataForSelectedDocument.Address} diagnosis = {dataForSelectedDocument.Diagnosis} egn = {dataForSelectedDocument.EGN} lechenie = {dataForSelectedDocument.Lechenie} doctor = {dataForSelectedDocument.Doctor}/> : "") : ""}
                     </div>
                 </div>
             </div>

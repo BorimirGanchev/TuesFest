@@ -111,7 +111,7 @@ export default function AddDocument(props) {
           />
           <input
             type="text"
-            placeholder="Lechenie"
+            placeholder="Treatment"
             onChange={handleChange}
             name="Lechenie"
             value={formData.Lechenie}
