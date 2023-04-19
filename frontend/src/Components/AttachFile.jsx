@@ -55,6 +55,7 @@ export default function AddDocument(props) {
             Name: formData.Name,
             Age: formData.Age,
             Address: formData.Address,
+            Gender: formData.Gender,
             Birth: formData.Date,
             Diagnosis: formData.Diagnosis,
             Lechenie: formData.Lechenie,
@@ -209,6 +210,14 @@ export default function AddDocument(props) {
             onChange={handleChange}
             name="Age"
             value={formData.Age}
+          />
+          <input
+            className="allInputs"
+            type="text"
+            placeholder="Sex"
+            onChange={handleChange}
+            name="Gender"
+            value={formData.Gender}
           />
           <input
             className="allInputs"

@@ -6,6 +6,7 @@ export default function Napravlenie(props){
             <p>Type : {props.type}</p>
             <p>Name : {props.name}</p>
             <p>Age : {props.age}</p>
+            <p>Sex : {props.gender}</p>
             <p>Date of birth : {props.birth}</p>
             <p>EGN : {props.egn}</p>
             <p>Address : {props.address}</p>
