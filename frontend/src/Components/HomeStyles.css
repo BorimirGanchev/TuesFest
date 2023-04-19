@@ -1,0 +1,158 @@
+body{
+  background-color:#222;
+}
+.home {
+  width: 100%;
+  background: #222;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainDiv {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.navbarComp{
+  flex: 1;
+  height: 10%;
+}
+
+.imageComp{
+  height: 90%;
+  flex: 1;
+  position: relative;
+}
+.Image{
+  display: flex;
+}
+.image {
+  width: 100%;
+  filter: brightness(40%); 
+}
+.mainTextContainer{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 100%;
+  height: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.bigText {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 70%;
+  text-align: center;
+  transform: translate(-50%, -100%);
+  color: white;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 470%;
+  z-index: 2;
+}
+.smallText {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  width: 65%;
+  text-align: center;
+  transform: translate(-50%, 90%);
+  color: white;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 200%;
+  z-index: 2;
+}
+
+.arrowButton{
+  color: #fff;
+  text-decoration: none;
+  position: absolute;
+  font-size: 400%;
+  top: 90%;
+  left: 50%;
+  background-color: transparent;
+  border: none;
+}
+.arrowButton:hover{
+  cursor: pointer;
+}
+
+.aboutUs{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: #222;
+  width: 100%;
+  height: 90vh;
+}
+.aboutUsText{
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.aboutUsTitle{
+  font-size: 40px;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.3em;
+}
+.aboutUsParagraf{
+  width: 50%;
+  font-size: 22px;
+  text-align: center;
+}
+.benefits{
+  display: flex;
+  flex-direction: column;
+  margin-top: 9%;
+  font-size: 22px;
+  justify-content: center;
+  color: white;
+}
+.benefitsHeader{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap:20%;
+}
+.icons{
+  font-size: 60px;
+  display: flex;
+  width: 10%;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.benefitsParagraph{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
+  flex: 1;
+}
+.paragraph{
+  color: #fff;
+  font-size: 22px;
+  width: 20%;
+  text-align: center;
+}
+
+@media screen and (max-width: 850px){
+  .home{
+    height: auto;
+  }
+  .mainDiv{
+    flex-direction: column;
+  }
+}

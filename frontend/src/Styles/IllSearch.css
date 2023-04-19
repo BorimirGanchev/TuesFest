@@ -1,0 +1,279 @@
+body {
+  background-color: #222;
+}
+
+.illHome {
+  width: 100%;
+  background: #222;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.input2 {
+  width: 100%;
+  background-color: #222;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.input2 .navbarComponent {
+  flex: 1;
+  height: 10%;
+}
+.input2 .backgroundImageContainer {
+  height: 90%;
+  width: 100%;
+  flex: 1;
+  position: relative;
+}
+.input2 .backgroundImageContainer .illSearchImage {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 100% 0;
+     object-position: 100% 0;
+  height: 65%;
+  width: 100%;
+  filter: brightness(40%);
+  border-top-right-radius: 15% 45%;
+  border-bottom-right-radius: 15% 45%;
+}
+.input2 .backgroundImageContainer .Illtext {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 100%;
+  height: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+}
+.input2 .backgroundImageContainer .Illtext .illMainText {
+  position: absolute;
+  top: 40%;
+  left: 21%;
+  width: 35%;
+  text-align: start;
+  transform: translate(-50%, -100%);
+  color: white;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 300%;
+  z-index: 2;
+}
+.input2 .backgroundImageContainer .Illtext .illSmallText {
+  position: absolute;
+  top: 80%;
+  left: 36%;
+  width: 65%;
+  text-align: start;
+  transform: translate(-50%, 90%);
+  color: rgb(226, 226, 226);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 150%;
+  z-index: 2;
+}
+.input2 .backgroundImageContainer .componentsBox {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: static;
+}
+.input2 .backgroundImageContainer .componentsBox label {
+  position: absolute;
+  top: 40%;
+  left: 3%;
+  width: 80%;
+}
+.input2 .backgroundImageContainer .componentsBox input {
+  width: 100%;
+  border: 4px solid white;
+  height: 55px;
+  border-radius: 50px;
+  background-color: #333333;
+  outline: none;
+  color: #ffffff;
+  font-size: 20px;
+  padding-left: 1%;
+}
+.input2 .backgroundImageContainer .componentsBox input::-moz-placeholder {
+  color: rgb(82, 82, 82);
+}
+.input2 .backgroundImageContainer .componentsBox input::placeholder {
+  color: rgb(82, 82, 82);
+}
+.input2 .backgroundImageContainer .componentsBox .send {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border: 4px solid white;
+  padding: 5px 15px;
+  margin: 1%;
+  border-radius: 25px;
+  color: white;
+  background-color: #8da4f1;
+  cursor: pointer;
+}
+.input2 .backgroundImageContainer .componentsBox .send:hover {
+  background-color: #4f65ac;
+}
+.input2 .illBackgroudContainer {
+  background-color: #7e7e7e;
+  width: 80%;
+  position: absolute;
+  top: 125%;
+  left: 50%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  overflow: auto;
+}
+.input2 .illBackgroudContainer h1 {
+  color: white;
+  text-align: center;
+  font-size: 350%;
+}
+.input2 .illBackgroudContainer .illnesContainer {
+  position: block;
+  top: 20%;
+  left: 0;
+  right: 0;
+  margin-bottom: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #8e8eff;
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.input2 .illBackgroudContainer .illnessName {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-top: 5%;
+  font-size: 40px;
+  font-weight: 600;
+  background-color: #444;
+  border-radius: 10px;
+  text-align: center;
+  width: 50%;
+}
+.input2 .illBackgroudContainer .illnessImage {
+  height: 50%;
+  width: 70%;
+}
+.input2 .illBackgroudContainer .illnessImage .illImage {
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7%;
+  border-radius: 20px;
+}
+.input2 .illBackgroudContainer .illnessDecription {
+  background-color: #444;
+  border-radius: 10px;
+  color: #ffffff;
+  font-weight: bold;
+  width: 60%;
+  margin-top: 5%;
+  font-size: larger;
+  text-align: center;
+  padding: 15px 15px 15px;
+}
+.input2 .illBackgroudContainer .illnessTreatment {
+  background-color: #444;
+  border-radius: 10px;
+  margin-top: 3%;
+  color: #ffffff;
+  padding: 15px 15px 15px;
+  font-weight: bold;
+  width: 60%;
+  margin-bottom: 4%;
+  font-size: larger;
+  text-align: center;
+}
+.input2 .illBackgroudContainer .illnessSpecialist {
+  background-color: #444;
+  border-radius: 10px;
+  margin-top: 3%;
+  color: #ffffff;
+  padding: 15px 15px 15px;
+  font-weight: bold;
+  width: 60%;
+  margin-bottom: 4%;
+  font-size: 130%;
+  text-align: center;
+}
+.input2 .illBackgroudContainer .percentageContainer {
+  background-color: #444;
+  border-radius: 10px;
+  margin-top: 3%;
+  color: #ffffff;
+  padding: 15px 15px 15px;
+  font-weight: bold;
+  width: 60%;
+  margin-bottom: 4%;
+  font-size: 130%;
+  text-align: center;
+}
+.input2 .illBackgroudContainer .percentageContainer .PercantageTitle {
+  display: flex;
+}
+.input2 .illBackgroudContainer .percentageContainer .progress-bar {
+  width: 100%;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #e6e6e6;
+  margin-bottom: 10px;
+}
+.input2 .illBackgroudContainer .percentageContainer .progress-bar .progress-bar-fill {
+  height: 100%;
+  border-radius: 10px;
+  background-color: #2ecc71;
+  transition: width 0.5s ease-out;
+}
+.input2 .illBackgroudContainer .percentageContainer .progress-bar .progress-bar-fill .progress-lable {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #444;
+  display: flex;
+  justify-content: end;
+}
+
+@media screen and (max-width: 629px) {
+  .input2 {
+    margin-top: 15%;
+  }
+}
+@media screen and (max-width: 464px) {
+  .input2 {
+    margin-top: 20%;
+  }
+  .input2 .Illtext {
+    height: 150%;
+  }
+}
+@media screen and (max-width: 386px) {
+  .input2 {
+    margin-top: 27%;
+  }
+  .input2 input {
+    margin-top: -10%;
+  }
+}/*# sourceMappingURL=IllSearch.css.map */

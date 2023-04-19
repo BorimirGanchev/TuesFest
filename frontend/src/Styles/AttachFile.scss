@@ -1,0 +1,42 @@
+.documentsHolder{
+    button{
+        color: white;
+        background-color: #8da4f1;
+        border: 2px solid white;
+        border-radius: 10px;
+    }
+    button:hover{
+        background-color: #4f65ac;
+    }
+    input{
+        background-color: rgb(180, 180, 180);
+        border: 2px solid white;
+        border-radius: 10px;
+        margin-top: 1%;
+    }
+    .allInputs{
+        width: 65%;
+    }
+    .submitDocument{
+        position: absolute;
+        left: 75%;
+        top: 55%
+    }
+    .showIfDocumendIsMade{
+        background-color: #222;
+        position: absolute;
+        color: white;
+        padding: 10px 10px 10px;
+        border-radius: 10px;
+        font-size: 130%;
+        font-weight: bold;
+        text-align: center;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+    }
+    .hideIfDocumentIsNotMade{
+        display: none;
+    }
+}

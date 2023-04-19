@@ -1,0 +1,118 @@
+.user-documents-container2 {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user-documents-container2 .showDocument2 {
+  background-color: #222;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 15px 15px;
+  position: absolute;
+  top: 68%;
+  left: 52%;
+  color: white;
+  font-size: 150%;
+  font-weight: 600;
+}
+.user-documents-container2 .showDocument2:hover {
+  color: rgb(201, 201, 201);
+  background-color: #1b1b1b;
+}
+.user-documents-container2 .documents2 {
+  position: absolute;
+  top: 30%;
+  height: 50%;
+  left: 25%;
+  background-color: #363636;
+  width: 50%;
+  border-radius: 25px;
+  text-align: center;
+}
+.user-documents-container2 .documents2 .yourDocumentsTitle2 {
+  color: white;
+}
+.user-documents-container2 .documents2 .close-user-docs2 {
+  color: rgb(207, 34, 34);
+  background-color: transparent;
+  border: none;
+  font-size: 200%;
+  position: absolute;
+  left: 92%;
+  top: 3%;
+}
+.user-documents-container2 .documents2 .documentsContainer2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+.user-documents-container2 .documents2 .documentsContainer2 .eachDocument2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  width: 40%;
+  height: 80%;
+}
+.user-documents-container2 .documents2 .documentsContainer2 .eachDocument2 div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+  background-color: #5d5b8d;
+  width: 100%;
+  color: white;
+  font-size: 130%;
+  font-weight: 600;
+  border-radius: 10px;
+  height: 10%;
+}
+.user-documents-container2 .documents2 .documentsContainer2 .eachDocument2 div button {
+  position: absolute;
+  left: 90%;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 120%;
+}
+.user-documents-container2 .documents2 .documentsContainer2 .eachDocument2 div button:hover {
+  color: #b9b9b9;
+}
+.user-documents-container2 .documents2 .documentsContainer2 .moreDataContainer2 {
+  flex-direction: column;
+  position: absolute;
+  color: white;
+  width: 50%;
+  top: 18%;
+  left: 48%;
+  height: 79%;
+  background-color: #5d5b8d;
+  border-radius: 10px;
+  overflow: auto;
+}
+.user-documents-container2 .documents2 .documentsContainer2 .moreDataContainer2 .belezhka-container {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.user-documents-container2 .documents2 .documentsContainer2 .moreDataContainer2 .belezhka-container p {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 130%;
+  font-weight: 600;
+  background-color: #444444;
+  border-radius: 10px;
+  width: 80%;
+  height: 15%;
+}/*# sourceMappingURL=UserDocumentsProfile.css.map */
