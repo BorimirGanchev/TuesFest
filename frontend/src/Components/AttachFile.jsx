@@ -47,6 +47,45 @@ export default function AddDocument(props) {
       console.log(err)
     }
   }
+
+  async function handleSubmitDirection () {
+    let documentToBeSend =
+      formData.type === "napravlenie"
+        ? {
+            Name: formData.Name,
+            Age: formData.Age,
+            Address: formData.Address,
+            Birth: formData.Date,
+            Diagnosis: formData.Diagnosis,
+            Lechenie: formData.Lechenie,
+            Type:formData.type,
+            EGN:formData.EGN,
+            Doctor: formData.Doctor
+          }
+        : {};
+    console.log(documentToBeSend);
+    try{
+      const axios_res = await axios
+      .post("http://localhost:5000/api/user", {
+        name: props.name,
+        document: documentToBeSend
+      })
+      console.log("add document response")
+      console.log(axios_res)
+      setShowDocumentAdded(true);
+      setTimeout(() => {
+        setShowDocumentAdded(false);
+      }, 3000);
+      setFormData({ // clear form data after submitting
+        Name: "",
+        type: "",
+        city: ""
+      });
+    }catch(err){
+      console.log(err)
+    }
+  }
+
   function handleChange(event) {
     const { name, value, type, checked } = event.target;
     setFormData((prevFormData) => {
@@ -93,6 +132,7 @@ export default function AddDocument(props) {
           <button className="submitDocument" onClick={handleSubmit}>Submit</button>
 
           <input
+            className="allInputs"
             type="text"
             placeholder="Name"
             onChange={handleChange}
@@ -100,6 +140,7 @@ export default function AddDocument(props) {
             value={formData.Name}
           />
           <input
+            className="allInputs"
             type="text"
             placeholder="Age"
             onChange={handleChange}
@@ -107,6 +148,7 @@ export default function AddDocument(props) {
             value={formData.Age}
           />
           <input
+            className="allInputs"
             type="text"
             placeholder="Address"
             onChange={handleChange}
@@ -114,6 +156,7 @@ export default function AddDocument(props) {
             value={formData.Address}
           />
           <input
+          className="allInputs"
           type="text"
           placeholder="EGN"
           onChange={handleChange}
@@ -121,6 +164,7 @@ export default function AddDocument(props) {
           value={formData.EGN}
           />
           <input
+            className="allInputs"
             type="text"
             placeholder="Diagnosis"
             onChange={handleChange}
@@ -128,6 +172,7 @@ export default function AddDocument(props) {
             value={formData.Diagnosis}
           />
           <input
+            className="allInputs"
             type="text"
             placeholder="Treatment"
             onChange={handleChange}
@@ -135,6 +180,7 @@ export default function AddDocument(props) {
             value={formData.Lechenie}
           />
           <input
+            className="allInputs"
             type="text"
             placeholder="Doctor"
             onChange={handleChange}
@@ -142,7 +188,77 @@ export default function AddDocument(props) {
             value={formData.Doctor}
           />
         </>
-      ) : ""}  
+      ) : ""} 
+
+        {formData.type === "napravlenie" ? (
+        <>
+          <button className="submitDocument" onClick={handleSubmitDirection}>Submit</button>
+
+          <input
+            className="allInputs"
+            type="text"
+            placeholder="Name"
+            onChange={handleChange}
+            name="Name"
+            value={formData.Name}
+          />
+          <input
+            className="allInputs"
+            type="text"
+            placeholder="Age"
+            onChange={handleChange}
+            name="Age"
+            value={formData.Age}
+          />
+          <input
+            className="allInputs"
+            type="date"
+            onChange={handleChange}
+            name="Date"
+            value={formData.Date}
+          />
+          <input
+            className="allInputs"
+            type="text"
+            placeholder="Address"
+            onChange={handleChange}
+            name="Address"
+            value={formData.Address}
+          />
+          <input
+          className="allInputs"
+          type="text"
+          placeholder="EGN"
+          onChange={handleChange}
+          name="EGN"
+          value={formData.EGN}
+          />
+          <input
+            className="allInputs"
+            type="text"
+            placeholder="Diagnosis"
+            onChange={handleChange}
+            name="Diagnosis"
+            value={formData.Diagnosis}
+          />
+          <input
+            className="allInputs"
+            type="text"
+            placeholder="Treatment"
+            onChange={handleChange}
+            name="Lechenie"
+            value={formData.Lechenie}
+          />
+          <input
+            className="allInputs"
+            type="text"
+            placeholder="Doctor"
+            onChange={handleChange}
+            name="Doctor"
+            value={formData.Doctor}
+          />
+        </>
+      ) : ""}
       
     </div>
   );

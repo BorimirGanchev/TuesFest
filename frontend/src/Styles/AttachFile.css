@@ -13,6 +13,9 @@
   border-radius: 10px;
   margin-top: 1%;
 }
+.documentsHolder .allInputs {
+  width: 65%;
+}
 .documentsHolder .submitDocument {
   position: absolute;
   left: 75%;

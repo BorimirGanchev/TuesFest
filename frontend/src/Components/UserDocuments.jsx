@@ -5,6 +5,7 @@ import "../Styles/showDocumentsNavbar.css"
 import { ChatContext } from "../context/chat-context-firebase";
 import Belezhka from "./MedicinskaBelezhka";
 import AddDocument from "./AttachFile";
+import Napravlenie from "./Napravlenie";
 
 
 export default function UserDocuments(props){
@@ -77,7 +78,7 @@ export default function UserDocuments(props){
                 <div className="documentsContainer">
                     <div className="eachDocument">{UserDocuments}</div>
                     <div className="moreDataContainer" style={divStyle}> 
-                        {dataForSelectedDocument ? (dataForSelectedDocument.Type === "belezhka" ? <Belezhka type = {dataForSelectedDocument.Type} name = {dataForSelectedDocument.Name} age = {dataForSelectedDocument.Age} address = {dataForSelectedDocument.Address} diagnosis = {dataForSelectedDocument.Diagnosis} egn = {dataForSelectedDocument.EGN} lechenie = {dataForSelectedDocument.Lechenie} doctor = {dataForSelectedDocument.Doctor}/> : "") : ""}
+                        {dataForSelectedDocument ? (dataForSelectedDocument.Type === "belezhka" ? <Belezhka type = {dataForSelectedDocument.Type} name = {dataForSelectedDocument.Name} age = {dataForSelectedDocument.Age} address = {dataForSelectedDocument.Address} diagnosis = {dataForSelectedDocument.Diagnosis} egn = {dataForSelectedDocument.EGN} lechenie = {dataForSelectedDocument.Lechenie} doctor = {dataForSelectedDocument.Doctor}/> : <Napravlenie type = {dataForSelectedDocument.Type} name = {dataForSelectedDocument.Name} age = {dataForSelectedDocument.Age} address = {dataForSelectedDocument.Address} diagnosis = {dataForSelectedDocument.Diagnosis} egn = {dataForSelectedDocument.EGN} lechenie = {dataForSelectedDocument.Lechenie} doctor = {dataForSelectedDocument.Doctor} birth = {dataForSelectedDocument.Birth}/>) : ""}
                     </div>
                 </div>
             </div>
