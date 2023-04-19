@@ -8,9 +8,13 @@ Doc Help е иновативен проект, насочен
 
 За стартирането на проекта въведете следните команди в терминала (Frontend): 
 cd frontend
+npm install
 npm start
 
 За стартирането на проекта въведете следните команди в терминала (Backend):
 (new terminal)
 cd backend
+npm install
 npm start 
+
+
