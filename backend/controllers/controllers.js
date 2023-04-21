@@ -2,19 +2,28 @@ const illness = require("../db-models/ilness-schema");
 const doctor = require("../db-models/doctor-schema");
 const user = require("../db-models/user-schema");
 const pos = require("pos");
+
 const getIllnes = async (req, res) => {
   const symptoms = req.query.symptoms;
   console.log(req.query.symptoms);
   const words = new pos.Lexer().lex(symptoms);
   const taggedWords = new pos.Tagger().tag(words);
   const nouns = [];
+  let excludeNextNoun = false;
 
   for (let i = 0; i < taggedWords.length; i++) {
     const taggedWord = taggedWords[i];
     const word = taggedWord[0];
     const tag = taggedWord[1];
-    if (tag.startsWith("NN")) {
-      nouns.push(word);
+
+    if (tag.startsWith("RB") && word === "not") {
+      excludeNextNoun = true;
+    } else if (tag.startsWith("NN")) {
+      if (!excludeNextNoun) {
+        nouns.push(word);
+      } else {
+        excludeNextNoun = false;
+      }
     }
   }
 
