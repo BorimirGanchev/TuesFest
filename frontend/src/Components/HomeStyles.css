@@ -32,6 +32,9 @@ body{
 .image {
   width: 100%;
   filter: brightness(40%); 
+  object-fit: cover;
+  object-position: 100% 0;
+  height: 100vh;
 }
 .mainTextContainer{
   position: absolute;
@@ -146,6 +149,21 @@ body{
   font-size: 22px;
   width: 20%;
   text-align: center;
+}
+
+@media screen and (min-width: 1920px){
+  .navbarComp{
+    height: auto;
+  }
+  .imageComp{
+    height: auto;
+  }
+  .arrowButton{
+    top: 80%;
+  }
+  .aboutUs{
+    height: 91%;
+  }
 }
 
 @media screen and (max-width: 850px){

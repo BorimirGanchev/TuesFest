@@ -100,7 +100,7 @@ body{
         padding-left: 1%;
         
         &::placeholder {
-          color: rgb(82, 82, 82);
+          color: rgb(216, 216, 216);
         }
       }
   
@@ -262,6 +262,14 @@ body{
     }
   }
 }
+
+  @media screen and (min-width: 1920px){
+    .input2{
+      .backgroundImageContainer{
+        height: 91%;
+      }
+    }
+  }
 
   @media screen and (max-width: 629px){
     .input2{

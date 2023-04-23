@@ -2,7 +2,11 @@ import React from "react";
 
 const Image = () => {
     const handleClick = () => {
-        window.scrollTo({top: 870, behavior: 'smooth'});
+        const screenHeight = window.innerHeight;
+        console.log(screenHeight)
+        console.log("screeeeeeeen")
+        window.scrollTo({top: screenHeight*2, behavior: 'smooth'});
+
     };
     return(
         <div className="Image">
